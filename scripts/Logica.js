@@ -2,45 +2,52 @@ class Logica {
 
     constructor(app) {
         this.app = app;
-        this.precio;
+        this.precio = 1;
+
+        this.pantalla = -1;
+        this.inicio = app.loadImage("./Img/Pantalla Inicial.png");
+        this.instrucciones;
+
+        this.contador = 0;
+
 
         this.valor;
 
-        switch (precio) {
-            case Enero:
-                valor = 50;
+        switch (this.precio) {
+            case 1:
+                this.valor = 50;
                 break;
 
-            case Febrero:
-                valor = 0;
+            case 2:
+                this.valor = 0;
                 break;
 
-            case Marzo:
-                valor = 0;
+            case 3:
+                this.valor = 0;
                 break;
 
-            case Abril:
-                valor = 0;
+            case 4:
+                this.valor = 0;
                 break;
 
-            case Mayo:
-                valor = 0;
+            case 5:
+                this.valor = 0;
                 break;
 
-            case Junio:
-                valor = 0;
+            case 6:
+                this.valor = 0;
                 break;
 
-            case Julio:
-                valor = 0;
+            case 7:
+                this.valor = 0;
                 break;
 
-            case Agosto:
-                valor = 0;
+            case 8:
+                this.valor = 0;
                 break;
 
-            case Septiembre:
-                valor = 0;
+            case 9:
+                this.valor = 0;
                 break;
             default:
                 break;
@@ -55,7 +62,38 @@ class Logica {
 
 
     pintar() {
-        this.app.background(255, 200, 200);
+
+        this.contador++;
+        console.log(this.contador);
+
+        if (this.contador == 250) {
+            this.pantalla = 0
+           
+        }
+
+        if (this.pantalla == 0) {
+            this.contador = 250 
+        }
+
+        if (condition) {
+            
+        }
+        switch (this.pantalla) {
+            case 0:
+                this.app.imageMode(this.app.CORNER);
+                this.app.image(this.inicio, 0, 0);
+                break;
+
+            default:
+                break;
+        }
+        
     }
+
+    
+    
+    
+    
+    
 }
 
