@@ -265,10 +265,7 @@ class Logica {
         } else {
             this.contador
         }
-
-        if (this.pantalla == -1) {
-            this.contar = true;
-        }
+this.contador = true;
 
         console.log(this.contador);
         console.log(this.pantalla);
