@@ -11,62 +11,31 @@ class Logica {
         this.intro3= app.loadImage("./Img/Introducción tres.png");
         this.intro4 = app.loadImage("./Img/Introducción cuatro.png");
         this.intro5 = app.loadImage("./Img/Introducción cinco.png");
+        this.modal1 = app.loadImage("./Img/modal.png");
         this.instrucciones;
 
         this.contador = 0;
 
 
-        this.valor;
+        this.valor = 50;
 
-        switch (this.precio) {
-            case 1:
-                this.valor = 50;
-                break;
-
-            case 2:
-                this.valor = 0;
-                break;
-
-            case 3:
-                this.valor = 0;
-                break;
-
-            case 4:
-                this.valor = 0;
-                break;
-
-            case 5:
-                this.valor = 0;
-                break;
-
-            case 6:
-                this.valor = 0;
-                break;
-
-            case 7:
-                this.valor = 0;
-                break;
-
-            case 8:
-                this.valor = 0;
-                break;
-
-            case 9:
-                this.valor = 0;
-                break;
-            default:
-                break;
-        }
+       
     }
 
 
 
     mouse() {
-
+     
+        if (this.app.mouseX > 500 && this.app.mouseX < 777 && this.app.mouseY > 520 && this.app.mouseY < 575 && this.pantalla == 3) {
+            this.pantalla =4;
+        }
+        
     }
 
 
     pintar() {
+
+       
 
         this.contador++;
         console.log(this.contador);
@@ -76,26 +45,25 @@ class Logica {
            
         }
 
-        if (this.pantalla == 0 && this.contador > 500) {
+        if (this.pantalla == 0 && this.contador > 750) {
             this.pantalla = 1;
         }
 
-        if (this.pantalla == 1 && this.contador > 750) {
+        if (this.pantalla == 1 && this.contador > 1250) {
             this.pantalla = 2;
         }
 
-        if (this.pantalla == 2 && this.contador > 1000) {
+        if (this.pantalla == 2 && this.contador > 1750) {
             this.pantalla = 3;
         }
 
-        if (this.pantalla == 3 && this.contador > 1250) {
+       /* if (this.pantalla == 3 && this.contador > 2250) {
             this.pantalla = 4;
         }
 
-        if (this.pantalla == 4 && this.contador > 1500) {
+        if (this.pantalla == 4 && this.contador > 2750) {
             this.pantalla = 5;
-        }
-
+        }*/
 
 
         switch (this.pantalla) {
@@ -131,7 +99,33 @@ class Logica {
             default:
                 break;
         }
-        
+
+        this.app.text("X:"+ this.app.mouseX+ " "+ "Y:"+this.app.mouseY, this.app.mouseX, this.app.mouseY );
+
+        if (this.app.mouseX > 511 && this.app.mouseX < 522 && this.app.mouseY > 339 && this.app.mouseY < 350 && this.pantalla == 4) {
+            this.app.image(this.modal1, 195, 155);
+        }
+
+        if (this.app.mouseX > 629 && this.app.mouseX < 640 && this.app.mouseY > 130 && this.app.mouseY < 141 && this.pantalla == 4) {
+            this.app.image(this.modal1, 313, 132);
+        }
+
+        if (this.app.mouseX > 740 && this.app.mouseX < 751 && this.app.mouseY > 370 && this.app.mouseY < 381 && this.pantalla == 4) {
+            this.app.image(this.modal1, 424, 182);
+        }
+
+        if (this.app.mouseX > 855 && this.app.mouseX < 866 && this.app.mouseY > 258 && this.app.mouseY < 269 && this.pantalla == 4) {
+            this.app.image(this.modal1, 540, 72);
+        }
+
+        if (this.app.mouseX > 970 && this.app.mouseX < 981 && this.app.mouseY > 154 && this.app.mouseY < 165 && this.pantalla == 4) {
+            this.app.image(this.modal1, 653, 162);
+        }
+
+        if (this.app.mouseX > 1030 && this.app.mouseX < 1041 && this.app.mouseY > 346 && this.app.mouseY < 357 && this.pantalla == 4) {
+            this.app.image(this.modal1, 713, 160);
+        }
+
     }
 
     
