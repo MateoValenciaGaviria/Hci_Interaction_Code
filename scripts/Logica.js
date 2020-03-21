@@ -16,6 +16,8 @@ class Logica {
 
         this.instrucciones = app.loadImage("./img/Instrucciones.png");
         this.meses = app.loadImage("./img/Meses.png");
+        this.comprar = app.loadImage("./img/ModalparaComprar.png");
+        this.vender = app.loadImage("./img/ModalparaVender.png");
         this.fuente = app.loadFont("./fonts/RobotoCondensed-Bold.ttf");
         this.fuente2 = app.loadFont("./fonts/RobotoCondensed-Regular.ttf");
         this.modalB1 = false;
@@ -25,18 +27,21 @@ class Logica {
         this.modalB5 = false;
         this.contador = 0;
 
-        this.dinero;
+        this.dinero = 100000;
 
         this.barriles;
-        this.barrilesD;
+        this.barrilesD = 1000;
 
         this.total;
 
         this.valorI = 50;
         this.valor;
         this.porcentaje;
-        this.valorCalculado; 
-        this.valorMes; 
+        this.valorCalculado;
+        this.valorMes;
+
+        this.compra;
+        this.vende;
     }
 
 
@@ -45,82 +50,205 @@ class Logica {
 
         switch (this.pantalla) {
             case 3:
-                if (this.app.mouseX > 500 && this.app.mouseX < 777 && this.app.mouseY > 520 && this.app.mouseY < 575 ) {
+                if (this.app.mouseX > 500 && this.app.mouseX < 777 && this.app.mouseY > 520 && this.app.mouseY < 575) {
                     this.pantalla = 4;
                 }
                 break;
 
             case 4:
-                if (this.app.mouseX > 1018 && this.app.mouseX < 1200 && this.app.mouseY > 650 && this.app.mouseY < 720 ) {
+                if (this.app.mouseX > 1018 && this.app.mouseX < 1200 && this.app.mouseY > 650 && this.app.mouseY < 720) {
                     this.pantalla = 5;
                 }
-            break;
+                break;
 
             case 6:
                 if (this.app.mouseX > 522 && this.app.mouseX < 772 && this.app.mouseY > 627 && this.app.mouseY < 697) {
                     this.pantalla = 7;
                 }
-            break;
+                break;
 
             case 7:
-                if (this.app.mouseX > 508 && this.app.mouseX < 758 && this.app.mouseY > 632 && this.app.mouseY < 702 ) {
-                    this.pantalla ++;
+                if (this.app.mouseX > 508 && this.app.mouseX < 758 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.pantalla++;
                 }
-            break;
+
+                if (this.app.mouseX > 63 && this.app.mouseX < 313 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.compra = true;
+                }
+
+                if (this.app.mouseX > 954 && this.app.mouseX < 1204 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.vende = true;
+                }
+
+                if (this.app.mouseX > 366 && this.app.mouseX < 616 && this.app.mouseY > 567 && this.app.mouseY < 686) {
+                    this.vende = false;
+                    this.compra = false;
+                }
+                break;
 
             case 8:
-                if (this.app.mouseX > 508 && this.app.mouseX < 758 && this.app.mouseY > 632 && this.app.mouseY < 702 ) {
-                    this.pantalla ++;
+                if (this.app.mouseX > 508 && this.app.mouseX < 758 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.pantalla++;
                 }
-            break;
+                if (this.app.mouseX > 63 && this.app.mouseX < 313 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.compra = true;
+                }
+
+                if (this.app.mouseX > 954 && this.app.mouseX < 1204 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.vende = true;
+                }
+
+
+                if (this.app.mouseX > 366 && this.app.mouseX < 616 && this.app.mouseY > 567 && this.app.mouseY < 686) {
+                    this.vende = false;
+                    this.compra = false;
+                }
+                break;
 
             case 9:
-                if (this.app.mouseX > 508 && this.app.mouseX < 758 && this.app.mouseY > 632 && this.app.mouseY < 702 ) {
-                    this.pantalla ++;
+                if (this.app.mouseX > 508 && this.app.mouseX < 758 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.pantalla++;
                 }
-            break;
+                if (this.app.mouseX > 63 && this.app.mouseX < 313 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.compra = true;
+                }
+
+                if (this.app.mouseX > 954 && this.app.mouseX < 1204 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.vende = true;
+                }
+
+
+                if (this.app.mouseX > 366 && this.app.mouseX < 616 && this.app.mouseY > 567 && this.app.mouseY < 686) {
+                    this.vende = false;
+                    this.compra = false;
+                }
+                break;
 
             case 10:
-                if (this.app.mouseX > 508 && this.app.mouseX < 758 && this.app.mouseY > 632 && this.app.mouseY < 702 ) {
-                    this.pantalla ++;
+                if (this.app.mouseX > 508 && this.app.mouseX < 758 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.pantalla++;
                 }
-            break;
+                if (this.app.mouseX > 63 && this.app.mouseX < 313 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.compra = true;
+                }
+
+                if (this.app.mouseX > 954 && this.app.mouseX < 1204 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.vende = true;
+                }
+
+
+                if (this.app.mouseX > 366 && this.app.mouseX < 616 && this.app.mouseY > 567 && this.app.mouseY < 686) {
+                    this.vende = false;
+                    this.compra = false;
+                }
+                break;
 
             case 11:
-                if (this.app.mouseX > 508 && this.app.mouseX < 758 && this.app.mouseY > 632 && this.app.mouseY < 702 ) {
-                    this.pantalla ++;
+                if (this.app.mouseX > 508 && this.app.mouseX < 758 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.pantalla++;
                 }
-            break;
+
+                if (this.app.mouseX > 63 && this.app.mouseX < 313 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.compra = true;
+                }
+
+                if (this.app.mouseX > 954 && this.app.mouseX < 1204 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.vende = true;
+                }
+
+
+                if (this.app.mouseX > 366 && this.app.mouseX < 616 && this.app.mouseY > 567 && this.app.mouseY < 686) {
+                    this.vende = false;
+                    this.compra = false;
+                }
+                break;
 
             case 12:
-                if (this.app.mouseX > 508 && this.app.mouseX < 758 && this.app.mouseY > 632 && this.app.mouseY < 702 ) {
-                    this.pantalla ++;
+                if (this.app.mouseX > 508 && this.app.mouseX < 758 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.pantalla++;
                 }
-            break;
+
+                if (this.app.mouseX > 63 && this.app.mouseX < 313 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.compra = true;
+                }
+
+                if (this.app.mouseX > 954 && this.app.mouseX < 1204 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.vende = true;
+                }
+
+
+                if (this.app.mouseX > 366 && this.app.mouseX < 616 && this.app.mouseY > 567 && this.app.mouseY < 686) {
+                    this.vende = false;
+                    this.compra = false;
+                }
+                break;
 
             case 13:
-                if (this.app.mouseX > 508 && this.app.mouseX < 758 && this.app.mouseY > 632 && this.app.mouseY < 702 ) {
-                    this.pantalla ++;
+                if (this.app.mouseX > 508 && this.app.mouseX < 758 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.pantalla++;
                 }
-            break;
+
+                if (this.app.mouseX > 63 && this.app.mouseX < 313 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.compra = true;
+                }
+
+                if (this.app.mouseX > 954 && this.app.mouseX < 1204 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.vende = true;
+                }
+
+
+                if (this.app.mouseX > 366 && this.app.mouseX < 616 && this.app.mouseY > 567 && this.app.mouseY < 686) {
+                    this.vende = false;
+                    this.compra = false;
+                }
+                break;
 
             case 14:
-                if (this.app.mouseX > 508 && this.app.mouseX < 758 && this.app.mouseY > 632 && this.app.mouseY < 702 ) {
-                    this.pantalla ++;
+                if (this.app.mouseX > 508 && this.app.mouseX < 758 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.pantalla++;
                 }
-            break;
-        
+                if (this.app.mouseX > 63 && this.app.mouseX < 313 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.compra = true;
+                }
+
+                if (this.app.mouseX > 954 && this.app.mouseX < 1204 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.vende = true;
+                }
+
+
+                if (this.app.mouseX > 366 && this.app.mouseX < 616 && this.app.mouseY > 567 && this.app.mouseY < 686) {
+                    this.vende = false;
+                    this.compra = false;
+                }
+                break;
+
+            case 15:
+                if (this.app.mouseX > 63 && this.app.mouseX < 313 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.compra = true;
+                }
+
+                if (this.app.mouseX > 954 && this.app.mouseX < 1204 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                    this.vende = true;
+                }
+
+
+                if (this.app.mouseX > 366 && this.app.mouseX < 616 && this.app.mouseY > 567 && this.app.mouseY < 686) {
+                    this.vende = false;
+                    this.compra = false;
+                }
+                break;
+
             default:
                 break;
         }
-        
-
-     
-
-        
 
 
-        
+
+
+
+
+
+
 
 
 
@@ -145,7 +273,7 @@ class Logica {
         console.log(this.contador);
         console.log(this.pantalla);
         console.log(this.valorMes);
-        
+
 
 
         if (this.contador == 250) {
@@ -222,91 +350,182 @@ class Logica {
             case 7:
                 this.app.imageMode(this.app.CORNER);
                 this.app.image(this.meses, 0, 0);
-                this.app.text(": "+this.valorMes+" "+"USD" , 230,55);
-                this.app.text(": "+this.barrilesD+" "+"USD" , 485,55);
-                this.app.text(": "+this.dinero+" "+"USD" , 775,55);
-                this.app.text(": "+this.total+" "+"USD" , 1030,55);
+                this.app.text(": " + this.valorMes + " " + "USD", 230, 55);
+                this.app.text(": " + this.barrilesD + " " + "USD", 485, 55);
+                this.app.text(": " + this.dinero + " " + "USD", 775, 55);
+                this.app.text(": " + this.total + " " + "USD", 1030, 55);
                 this.precio = 1;
+
+                if (this.compra) {
+                    this.app.imageMode(this.app.CORNER);
+                    this.app.image(this.comprar, 0, 0);
+                }
+
+                if (this.vende) {
+                    this.app.imageMode(this.app.CORNER);
+                    this.app.image(this.vender, 0, 0);
+                }
                 break;
 
             case 8:
                 this.app.imageMode(this.app.CORNER);
                 this.app.image(this.meses, 0, 0);
-                this.app.text(": "+this.valorMes+" "+"USD" , 230,55);
-                this.app.text(": "+this.barrilesD+" "+"USD" , 485,55);
-                this.app.text(": "+this.dinero+" "+"USD" , 775,55);
-                this.app.text(": "+this.total+" "+"USD" , 1030,55);
+                this.app.text(": " + this.valorMes + " " + "USD", 230, 55);
+                this.app.text(": " + this.barrilesD + " " + "USD", 485, 55);
+                this.app.text(": " + this.dinero + " " + "USD", 775, 55);
+                this.app.text(": " + this.total + " " + "USD", 1030, 55);
                 this.precio = 2;
+
+                if (this.compra) {
+                    this.app.imageMode(this.app.CORNER);
+                    this.app.image(this.comprar, 0, 0);
+                }
+
+                if (this.vende) {
+                    this.app.imageMode(this.app.CORNER);
+                    this.app.image(this.vender, 0, 0);
+                }
+
                 break;
 
             case 9:
                 this.app.imageMode(this.app.CORNER);
                 this.app.image(this.meses, 0, 0);
-                this.app.text(": "+this.valorMes+" "+"USD" , 230,55);
-                this.app.text(": "+this.barrilesD+" "+"USD" , 485,55);
-                this.app.text(": "+this.dinero+" "+"USD" , 775,55);
-                this.app.text(": "+this.total+" "+"USD" , 1030,55);
+                this.app.text(": " + this.valorMes + " " + "USD", 230, 55);
+                this.app.text(": " + this.barrilesD + " " + "USD", 485, 55);
+                this.app.text(": " + this.dinero + " " + "USD", 775, 55);
+                this.app.text(": " + this.total + " " + "USD", 1030, 55);
                 this.precio = 3;
+
+                if (this.compra) {
+                    this.app.imageMode(this.app.CORNER);
+                    this.app.image(this.comprar, 0, 0);
+                }
+
+                if (this.vende) {
+                    this.app.imageMode(this.app.CORNER);
+                    this.app.image(this.vender, 0, 0);
+                }
                 break;
 
             case 10:
                 this.app.imageMode(this.app.CORNER);
                 this.app.image(this.meses, 0, 0);
-                this.app.text(": "+this.valorMes+" "+"USD" , 230,55);
-                this.app.text(": "+this.barrilesD+" "+"USD" , 485,55);
-                this.app.text(": "+this.dinero+" "+"USD" , 775,55);
-                this.app.text(": "+this.total+" "+"USD" , 1030,55);
+                this.app.text(": " + this.valorMes + " " + "USD", 230, 55);
+                this.app.text(": " + this.barrilesD + " " + "USD", 485, 55);
+                this.app.text(": " + this.dinero + " " + "USD", 775, 55);
+                this.app.text(": " + this.total + " " + "USD", 1030, 55);
                 this.precio = 4;
+
+                if (this.compra) {
+                    this.app.imageMode(this.app.CORNER);
+                    this.app.image(this.comprar, 0, 0);
+                }
+
+                if (this.vende) {
+                    this.app.imageMode(this.app.CORNER);
+                    this.app.image(this.vender, 0, 0);
+                }
                 break;
 
             case 11:
                 this.app.imageMode(this.app.CORNER);
                 this.app.image(this.meses, 0, 0);
-                this.app.text(": "+this.valorMes+" "+"USD" , 230,55);
-                this.app.text(": "+this.barrilesD+" "+"USD" , 485,55);
-                this.app.text(": "+this.dinero+" "+"USD" , 775,55);
-                this.app.text(": "+this.total+" "+"USD" , 1030,55);
+                this.app.text(": " + this.valorMes + " " + "USD", 230, 55);
+                this.app.text(": " + this.barrilesD + " " + "USD", 485, 55);
+                this.app.text(": " + this.dinero + " " + "USD", 775, 55);
+                this.app.text(": " + this.total + " " + "USD", 1030, 55);
                 this.precio = 5;
+
+                if (this.compra) {
+                    this.app.imageMode(this.app.CORNER);
+                    this.app.image(this.comprar, 0, 0);
+                }
+
+                if (this.vende) {
+                    this.app.imageMode(this.app.CORNER);
+                    this.app.image(this.vender, 0, 0);
+                }
                 break;
 
             case 12:
                 this.app.imageMode(this.app.CORNER);
                 this.app.image(this.meses, 0, 0);
-                this.app.text(": "+this.valorMes+" "+"USD" , 230,55);
-                this.app.text(": "+this.barrilesD+" "+"USD" , 485,55);
-                this.app.text(": "+this.dinero+" "+"USD" , 775,55);
-                this.app.text(": "+this.total+" "+"USD" , 1030,55);
+                this.app.text(": " + this.valorMes + " " + "USD", 230, 55);
+                this.app.text(": " + this.barrilesD + " " + "USD", 485, 55);
+                this.app.text(": " + this.dinero + " " + "USD", 775, 55);
+                this.app.text(": " + this.total + " " + "USD", 1030, 55);
                 this.precio = 6;
+
+                if (this.compra) {
+                    this.app.imageMode(this.app.CORNER);
+                    this.app.image(this.comprar, 0, 0);
+                }
+
+                if (this.vende) {
+                    this.app.imageMode(this.app.CORNER);
+                    this.app.image(this.vender, 0, 0);
+                }
                 break;
 
             case 13:
                 this.app.imageMode(this.app.CORNER);
                 this.app.image(this.meses, 0, 0);
-                this.app.text(": "+this.valorMes+" "+"USD" , 230,55);
-                this.app.text(": "+this.barrilesD+" "+"USD" , 485,55);
-                this.app.text(": "+this.dinero+" "+"USD" , 775,55);
-                this.app.text(": "+this.total+" "+"USD" , 1030,55);
+                this.app.text(": " + this.valorMes + " " + "USD", 230, 55);
+                this.app.text(": " + this.barrilesD + " " + "USD", 485, 55);
+                this.app.text(": " + this.dinero + " " + "USD", 775, 55);
+                this.app.text(": " + this.total + " " + "USD", 1030, 55);
                 this.precio = 7;
+
+                if (this.compra) {
+                    this.app.imageMode(this.app.CORNER);
+                    this.app.image(this.comprar, 0, 0);
+                }
+
+                if (this.vende) {
+                    this.app.imageMode(this.app.CORNER);
+                    this.app.image(this.vender, 0, 0);
+                }
                 break;
 
             case 14:
                 this.app.imageMode(this.app.CORNER);
                 this.app.image(this.meses, 0, 0);
-                this.app.text(": "+this.valorMes+" "+"USD" , 230,55);
-                this.app.text(": "+this.barrilesD+" "+"USD" , 485,55);
-                this.app.text(": "+this.dinero+" "+"USD" , 775,55);
-                this.app.text(": "+this.total+" "+"USD" , 1030,55);
+                this.app.text(": " + this.valorMes + " " + "USD", 230, 55);
+                this.app.text(": " + this.barrilesD + " " + "USD", 485, 55);
+                this.app.text(": " + this.dinero + " " + "USD", 775, 55);
+                this.app.text(": " + this.total + " " + "USD", 1030, 55);
                 this.precio = 8;
+
+                if (this.compra) {
+                    this.app.imageMode(this.app.CORNER);
+                    this.app.image(this.comprar, 0, 0);
+                }
+
+                if (this.vende) {
+                    this.app.imageMode(this.app.CORNER);
+                    this.app.image(this.vender, 0, 0);
+                }
                 break;
 
             case 15:
                 this.app.imageMode(this.app.CORNER);
                 this.app.image(this.meses, 0, 0);
-                this.app.text(": "+this.valorMes+" "+"USD" , 230,55);
-                this.app.text(": "+this.barrilesD+" "+"USD" , 485,55);
-                this.app.text(": "+this.dinero+" "+"USD" , 775,55);
-                this.app.text(": "+this.total+" "+"USD" , 1030,55);
+                this.app.text(": " + this.valorMes + " " + "USD", 230, 55);
+                this.app.text(": " + this.barrilesD + " " + "USD", 485, 55);
+                this.app.text(": " + this.dinero + " " + "USD", 775, 55);
+                this.app.text(": " + this.total + " " + "USD", 1030, 55);
                 this.precio = 9;
+
+                if (this.compra) {
+                    this.app.imageMode(this.app.CORNER);
+                    this.app.image(this.comprar, 0, 0);
+                }
+
+                if (this.vende) {
+                    this.app.imageMode(this.app.CORNER);
+                    this.app.image(this.vender, 0, 0);
+                }
                 break;
 
 
@@ -317,65 +536,65 @@ class Logica {
         switch (this.precio) {
             case 1:
                 this.porcentaje = 0.12;
-                this.valor = this.valorI+(this.porcentaje * this.valorI);
-                
+                this.valor = this.valorI + (this.porcentaje * this.valorI);
+                this.total = this.dinero + (this.barrilesD * this.valorMes);
                 this.valorMes = this.valor.toFixed(2);
-                
+
                 break;
 
             case 2:
                 this.porcentaje = 0;
-                this.valorCalculado = this.valor+(this.porcentaje * this.valor)
-                
+                this.valorCalculado = this.valor + (this.porcentaje * this.valor)
+                this.total = this.dinero + (this.barrilesD * this.valorMes);
                 this.valorMes = this.valorCalculado.toFixed(2);
                 break;
 
             case 3:
                 this.porcentaje = 0.30;
-                this.valorCalculado = this.valor-(this.porcentaje * this.valor)
-                
+                this.valorCalculado = this.valor - (this.porcentaje * this.valor)
+                this.total = this.dinero + (this.barrilesD * this.valorMes);
                 this.valorMes = this.valorCalculado.toFixed(2);
                 break;
 
             case 4:
                 this.porcentaje = 0.10;
-                this.valorCalculado = this.valor+(this.porcentaje * this.valor)
-                
+                this.valorCalculado = this.valor + (this.porcentaje * this.valor)
+                this.total = this.dinero + (this.barrilesD * this.valorMes);
                 this.valorMes = this.valorCalculado.toFixed(2);
                 break;
 
             case 5:
                 this.porcentaje = 0.08;
-                this.valorCalculado = this.valor-(this.porcentaje * this.valor)
-                
+                this.valorCalculado = this.valor - (this.porcentaje * this.valor)
+                this.total = this.dinero + (this.barrilesD * this.valorMes);
                 this.valorMes = this.valorCalculado.toFixed(2);
                 break;
 
             case 6:
                 this.porcentaje = 0.22;
-                this.valorCalculado = this.valor+(this.porcentaje * this.valor)
-                
+                this.valorCalculado = this.valor + (this.porcentaje * this.valor)
+                this.total = this.dinero + (this.barrilesD * this.valorMes);
                 this.valorMes = this.valorCalculado.toFixed(2);
                 break;
 
             case 7:
                 this.porcentaje = 0.08;
-                this.valorCalculado = this.valor+(this.porcentaje * this.valor)
-                
+                this.valorCalculado = this.valor + (this.porcentaje * this.valor)
+                this.total = this.dinero + (this.barrilesD * this.valorMes);
                 this.valorMes = this.valorCalculado.toFixed(2);
                 break;
 
             case 8:
                 this.porcentaje = 0;
-                this.valorCalculado = this.valor+(this.porcentaje * this.valor)
-                
+                this.valorCalculado = this.valor + (this.porcentaje * this.valor)
+                this.total = this.dinero + (this.barrilesD * this.valorMes);
                 this.valorMes = this.valorCalculado.toFixed(2);
                 break;
 
             case 9:
                 this.porcentaje = 0.10;
-                this.valorCalculado = this.valor-(this.porcentaje * this.valor)
-                
+                this.valorCalculado = this.valor - (this.porcentaje * this.valor)
+                this.total = this.dinero + (this.barrilesD * this.valorMes);
                 this.valorMes = this.valorCalculado.toFixed(2);
                 break;
             default:
