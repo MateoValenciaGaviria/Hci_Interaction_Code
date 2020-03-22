@@ -8,7 +8,7 @@ class Logica {
 
         this.precio = 1;
 
-        this.pantalla = 0;
+        this.pantalla = 6;
 
         this.inicio = app.loadImage("./img/PantallaInicial.png");
         this.intro = app.loadImage("./img/Introducción.png");
@@ -131,7 +131,11 @@ class Logica {
         this.dinero = 100000;
         this.cantidadBarriles = 1000;
         this.precioBarril = 50;
-        this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril);
+        this.dineroTotal = this.dinero + ((this.cantidadBarriles * this.precioBarril)/100);
+        this.dinero.toFixed(0);
+        this.cantidadBarriles.toFixed(0);
+        this.precioBarril.toFixed(0);
+        this.dineroTotal.toFixed(0);
 
         this.compra = false;
         this.barrilesComprados = 0;
@@ -181,7 +185,7 @@ class Logica {
             case 6:
                 if (this.btnJugar.isSobre()) {
                     this.pasa = true;
-                    this.precioBarril += this.precioBarril * this.porcentaje;
+                    this.precioBarril += ((this.precioBarril * this.porcentaje)/100);
                 }
                 break;
 
@@ -200,7 +204,9 @@ class Logica {
 
             if (this.app.mouseX > 508 && this.app.mouseX < 757 && this.app.mouseY > 632 && this.app.mouseY < 702) {
                 this.pasa = true;
-                this.precioBarril += (this.precioBarril * this.porcentaje);
+                this.precioBarril += ((this.precioBarril * this.porcentaje)/100);
+                this.dinero += (this.precioBarril * this.barrilesVendidos);
+                this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril);
             }
 
             if (this.vende || this.compra) {
@@ -218,7 +224,9 @@ class Logica {
                         this.vende = false;
                         this.barrilesVendidos = 0;
                         this.pantalla++;
-                        this.precioBarril += (this.precioBarril * this.porcentaje);
+                        this.precioBarril += ((this.precioBarril * this.porcentaje)/100);
+                        this.precioBarril.toFixed(0);
+                        this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril);
                     }
                 }
 
@@ -229,7 +237,9 @@ class Logica {
                         this.compra = false;
                         this.barrilesComprados = 0;
                         this.pantalla++;
-                        this.precioBarril += (this.precioBarril * this.porcentaje);
+                        this.precioBarril += ((this.precioBarril * this.porcentaje)/100);
+                        this.precioBarril.toFixed(0);
+                        this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril);
                     }
                 }
                 for (let i = 0; i < 20; i++) {
@@ -241,6 +251,11 @@ class Logica {
 
 
     pintar() {
+
+        this.dinero.toFixed(0);
+        this.cantidadBarriles.toFixed(0);
+        this.precioBarril.toFixed(0);
+        this.dineroTotal.toFixed(0);
 
         this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril);
         this.app.textFont(this.fuente2);
@@ -413,7 +428,7 @@ class Logica {
 
         switch (this.precio) {
             case 1:
-                this.porcentaje = 0.12;
+                this.porcentaje = 12;
                 break;
 
             case 2:
@@ -421,23 +436,23 @@ class Logica {
                 break;
 
             case 3:
-                this.porcentaje = -0.30;
+                this.porcentaje = -30;
                 break;
 
             case 4:
-                this.porcentaje = +0.10;
+                this.porcentaje = +10;
                 break;
 
             case 5:
-                this.porcentaje = -0.08;
+                this.porcentaje = -8;
                 break;
 
             case 6:
-                this.porcentaje = +0.22;
+                this.porcentaje = +22;
                 break;
 
             case 7:
-                this.porcentaje = +0.08;
+                this.porcentaje = +8;
                 break;
 
             case 8:
