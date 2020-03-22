@@ -4,6 +4,8 @@ class Logica {
 
         this.app = app;
 
+        this.puntaje = 0;
+
         this.precio = 1;
 
         this.pantalla = 0;
@@ -382,6 +384,25 @@ class Logica {
                 }
                 this.app.text(this.dineroTotal.toFixed(0) + " " + "USD", 840, 570);
                 this.app.fill(0);
+
+                if(this.dineroTotal < 150000){
+                    this,this.puntaje = 0;
+                }
+
+                if(this.dineroTotal > 150000 && this.dineroTotal < 450000){
+                    this,this.puntaje = 5;
+                }
+
+                if(this.dineroTotal > 450000 && this.dineroTotal < 900000){
+                    this,this.puntaje = 10;
+                }
+
+                if(this.dineroTotal > 900000 && this.dineroTotal < 1350000){
+                    this,this.puntaje = 15;
+                }
+                if(this.dineroTotal > 1350000){
+                    this,this.puntaje = 20;
+                }
                 break;
 
             default:
