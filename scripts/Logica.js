@@ -6,7 +6,7 @@ class Logica {
 
         this.precio = 1;
 
-        this.pantalla = 5;
+        this.pantalla =0;
 
         this.inicio = app.loadImage("./img/Pantalla Inicial.png");
         this.intro = app.loadImage("./img/Introducción.png");
@@ -61,12 +61,12 @@ class Logica {
             this.btnCtdBarril10 = new Elemento(this.app, "./img/btn1000.png", 324, 353),
             this.btnCtdBarril11 = new Elemento(this.app, "./img/btn1100.png", 466, 353),
             this.btnCtdBarril12 = new Elemento(this.app, "./img/btn1200.png", 607, 353),
-            this.btnCtdBarril13 = new Elemento(this.app, "./img/btn1300.png", 324, 425),
-            this.btnCtdBarril14 = new Elemento(this.app, "./img/btn1400.png", 466, 425),
-            this.btnCtdBarril15 = new Elemento(this.app, "./img/btn1500.png", 607, 425),
-            this.btnCtdBarril16 = new Elemento(this.app, "./img/btn1600.png", 184, 425),
-            this.btnCtdBarril17 = new Elemento(this.app, "./img/btn1700.png", 324, 497),
-            this.btnCtdBarril18 = new Elemento(this.app, "./img/btn1800.png", 184, 497),
+            this.btnCtdBarril13 = new Elemento(this.app, "./img/btn1300.png", 184, 425),
+            this.btnCtdBarril14 = new Elemento(this.app, "./img/btn1400.png", 324, 425),
+            this.btnCtdBarril15 = new Elemento(this.app, "./img/btn1500.png", 466, 425),
+            this.btnCtdBarril16 = new Elemento(this.app, "./img/btn1600.png", 607, 425),
+            this.btnCtdBarril17 = new Elemento(this.app, "./img/btn1700.png", 184, 497),
+            this.btnCtdBarril18 = new Elemento(this.app, "./img/btn1800.png", 324, 497),
             this.btnCtdBarril19 = new Elemento(this.app, "./img/btn1900.png", 466, 497),
             this.btnCtdBarril20 = new Elemento(this.app, "./img/btn2000.png", 607, 497)
         ];
@@ -84,12 +84,12 @@ class Logica {
             this.btnCtdBarril10B = new Elemento(this.app, "./img/btn1000B.png", 324, 353),
             this.tnCtdBarril11B = new Elemento(this.app, "./img/btn1100B.png", 466, 353),
             this.btnCtdBarril12B = new Elemento(this.app, "./img/btn1200B.png", 607, 353),
-            this.btnCtdBarril13B = new Elemento(this.app, "./img/btn1300B.png", 324, 425),
-            this.btnCtdBarril14B = new Elemento(this.app, "./img/btn1400B.png", 466, 425),
-            this.btnCtdBarril15B = new Elemento(this.app, "./img/btn1500B.png", 607, 425),
-            this.btnCtdBarril16B = new Elemento(this.app, "./img/btn1600B.png", 184, 425),
-            this.btnCtdBarril17B = new Elemento(this.app, "./img/btn1700B.png", 324, 497),
-            this.btnCtdBarril18B = new Elemento(this.app, "./img/btn1800B.png", 184, 497),
+            this.btnCtdBarril13B = new Elemento(this.app, "./img/btn1300B.png", 184, 425),
+            this.btnCtdBarril14B = new Elemento(this.app, "./img/btn1400B.png", 324, 425),
+            this.btnCtdBarril15B = new Elemento(this.app, "./img/btn1500B.png", 466, 425),
+            this.btnCtdBarril16B = new Elemento(this.app, "./img/btn1600B.png", 607, 425),
+            this.btnCtdBarril17B = new Elemento(this.app, "./img/btn1700B.png", 184, 497),
+            this.btnCtdBarril18B = new Elemento(this.app, "./img/btn1800B.png", 324, 497),
             this.btnCtdBarril19B = new Elemento(this.app, "./img/btn1900B.png", 466, 497),
             this.btnCtdBarril20B = new Elemento(this.app, "./img/btn2000B.png", 607, 497)
         ];
