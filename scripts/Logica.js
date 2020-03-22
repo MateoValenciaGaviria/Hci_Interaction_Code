@@ -6,7 +6,7 @@ class Logica {
 
         this.precio = 1;
 
-        this.pantalla = 5;
+        this.pantalla = 6;
 
         this.inicio = app.loadImage("./img/Pantalla Inicial.png");
         this.intro = app.loadImage("./img/Introducción.png");
@@ -48,28 +48,30 @@ class Logica {
         this.btnComprarActivado = app.loadImage("./img/BotonComprarActivado.png");
         this.btnComprarDesactivado = app.loadImage("./img/BotonComprarDesactivado.png");
 
-        this.botonesActivados = [
-            this.btnCtdBarril1 = new Elemento(this.app, "./img/btn100.png", 184, 209),
-            this.btnCtdBarril2 = new Elemento(this.app, "./img/btn200.png", 324, 209),
-            this.btnCtdBarril3 = new Elemento(this.app, "./img/btn300.png", 466, 209),
-            this.btnCtdBarril4 = new Elemento(this.app, "./img/btn400.png", 607, 209),
-            this.btnCtdBarril5 = new Elemento(this.app, "./img/btn500.png", 184, 281),
-            this.btnCtdBarril6 = new Elemento(this.app, "./img/btn600.png", 324, 281),
-            this.btnCtdBarril7 = new Elemento(this.app, "./img/btn700.png", 466, 281),
-            this.btnCtdBarril8 = new Elemento(this.app, "./img/btn800.png", 607, 281),
-            this.btnCtdBarril9 = new Elemento(this.app, "./img/btn900.png", 184, 353),
-            this.btnCtdBarril10 = new Elemento(this.app, "./img/btn1000.png", 324, 353),
-            this.btnCtdBarril11 = new Elemento(this.app, "./img/btn1100.png", 466, 353),
-            this.btnCtdBarril12 = new Elemento(this.app, "./img/btn1200.png", 607, 353),
-            this.btnCtdBarril13 = new Elemento(this.app, "./img/btn1300.png", 324, 425),
-            this.btnCtdBarril14 = new Elemento(this.app, "./img/btn1400.png", 466, 425),
-            this.btnCtdBarril15 = new Elemento(this.app, "./img/btn1500.png", 607, 425),
-            this.btnCtdBarril16 = new Elemento(this.app, "./img/btn1600.png", 184, 425),
-            this.btnCtdBarril17 = new Elemento(this.app, "./img/btn1700.png", 324, 497),
-            this.btnCtdBarril18 = new Elemento(this.app, "./img/btn1800.png", 184, 497),
-            this.btnCtdBarril19 = new Elemento(this.app, "./img/btn1900.png", 466, 497),
-            this.btnCtdBarril20 = new Elemento(this.app, "./img/btn2000.png", 607, 497)
-        ];
+        this.btnJugar = new Elemento(this.app, "./img/BotonJugar.png", 640, 652),
+
+            this.botonesActivados = [
+                this.btnCtdBarril1 = new Elemento(this.app, "./img/btn100.png", 184, 209),
+                this.btnCtdBarril2 = new Elemento(this.app, "./img/btn200.png", 324, 209),
+                this.btnCtdBarril3 = new Elemento(this.app, "./img/btn300.png", 466, 209),
+                this.btnCtdBarril4 = new Elemento(this.app, "./img/btn400.png", 607, 209),
+                this.btnCtdBarril5 = new Elemento(this.app, "./img/btn500.png", 184, 281),
+                this.btnCtdBarril6 = new Elemento(this.app, "./img/btn600.png", 324, 281),
+                this.btnCtdBarril7 = new Elemento(this.app, "./img/btn700.png", 466, 281),
+                this.btnCtdBarril8 = new Elemento(this.app, "./img/btn800.png", 607, 281),
+                this.btnCtdBarril9 = new Elemento(this.app, "./img/btn900.png", 184, 353),
+                this.btnCtdBarril10 = new Elemento(this.app, "./img/btn1000.png", 324, 353),
+                this.btnCtdBarril11 = new Elemento(this.app, "./img/btn1100.png", 466, 353),
+                this.btnCtdBarril12 = new Elemento(this.app, "./img/btn1200.png", 607, 353),
+                this.btnCtdBarril13 = new Elemento(this.app, "./img/btn1300.png", 324, 425),
+                this.btnCtdBarril14 = new Elemento(this.app, "./img/btn1400.png", 466, 425),
+                this.btnCtdBarril15 = new Elemento(this.app, "./img/btn1500.png", 607, 425),
+                this.btnCtdBarril16 = new Elemento(this.app, "./img/btn1600.png", 184, 425),
+                this.btnCtdBarril17 = new Elemento(this.app, "./img/btn1700.png", 324, 497),
+                this.btnCtdBarril18 = new Elemento(this.app, "./img/btn1800.png", 184, 497),
+                this.btnCtdBarril19 = new Elemento(this.app, "./img/btn1900.png", 466, 497),
+                this.btnCtdBarril20 = new Elemento(this.app, "./img/btn2000.png", 607, 497)
+            ];
 
         this.botonesDesactivados = [
             this.btnCtdBarril1B = new Elemento(this.app, "./img/btn100B.png", 184, 209),
@@ -173,7 +175,7 @@ class Logica {
                 break;
 
             case 6:
-                if (this.app.mouseX > 502 && this.app.mouseX < 777 && this.app.mouseY > 622 && this.app.mouseY < 675) {
+                if(this.btnJugar.isSobre()){
                     this.pantalla = 7;
                     this.precioBarril += this.precioBarril * this.porcentaje;
                 }
@@ -193,7 +195,7 @@ class Logica {
             }
 
             if (this.app.mouseX > 508 && this.app.mouseX < 757 && this.app.mouseY > 632 && this.app.mouseY < 702) {
-                this.pasa = true;
+                this.pasa ++;
                 this.precioBarril += this.precioBarril * this.porcentaje;
             }
 
@@ -320,6 +322,7 @@ class Logica {
             case 6:
                 this.contar = false;
                 this.app.image(this.instrucciones, 0, 0);
+                this.btnJugar.pintar();
                 break;
 
             case 7:
