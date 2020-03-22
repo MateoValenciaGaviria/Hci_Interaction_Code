@@ -131,11 +131,8 @@ class Logica {
         this.dinero = 100000;
         this.cantidadBarriles = 1000;
         this.precioBarril = 50;
-        this.dineroTotal = this.dinero + ((this.cantidadBarriles * this.precioBarril)/100);
-        this.dinero.toFixed(0);
-        this.cantidadBarriles.toFixed(0);
+        this.dineroTotal = this.dinero + ((this.cantidadBarriles * this.precioBarril.toFixed(0))/100);
         this.precioBarril.toFixed(0);
-        this.dineroTotal.toFixed(0);
 
         this.compra = false;
         this.barrilesComprados = 0;
@@ -206,7 +203,7 @@ class Logica {
                 this.pasa = true;
                 this.precioBarril += ((this.precioBarril * this.porcentaje)/100);
                 this.dinero += (this.precioBarril * this.barrilesVendidos);
-                this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril);
+                this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril.toFixed(0));
             }
 
             if (this.vende || this.compra) {
@@ -219,27 +216,27 @@ class Logica {
 
                 if (this.vende && this.barrilesVendidos != 0) {
                     if (this.app.mouseX > 684 && this.app.mouseX < 934 && this.app.mouseY > 567 && this.app.mouseY < 637) {
-                        this.dinero += (this.precioBarril * this.barrilesVendidos);
+                        this.dinero += (this.precioBarril.toFixed(0) * this.barrilesVendidos);
                         this.cantidadBarriles -= this.barrilesVendidos;
                         this.vende = false;
                         this.barrilesVendidos = 0;
                         this.pantalla++;
-                        this.precioBarril += ((this.precioBarril * this.porcentaje)/100);
+                        this.precioBarril += ((this.precioBarril.toFixed(0) * this.porcentaje)/100);
                         this.precioBarril.toFixed(0);
-                        this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril);
+                        this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril.toFixed(0));
                     }
                 }
 
                 if (this.compra && this.barrilesComprados != 0) {
                     if (this.app.mouseX > 684 && this.app.mouseX < 934 && this.app.mouseY > 567 && this.app.mouseY < 637) {
-                        this.dinero -= (this.precioBarril * this.barrilesComprados);
+                        this.dinero -= (this.precioBarril.toFixed(0) * this.barrilesComprados);
                         this.cantidadBarriles += this.barrilesComprados;
                         this.compra = false;
                         this.barrilesComprados = 0;
                         this.pantalla++;
-                        this.precioBarril += ((this.precioBarril * this.porcentaje)/100);
+                        this.precioBarril += ((this.precioBarril.toFixed(0) * this.porcentaje)/100);
                         this.precioBarril.toFixed(0);
-                        this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril);
+                        this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril.toFixed(0));
                     }
                 }
                 for (let i = 0; i < 20; i++) {
@@ -251,13 +248,7 @@ class Logica {
 
 
     pintar() {
-
-        this.dinero.toFixed(0);
-        this.cantidadBarriles.toFixed(0);
-        this.precioBarril.toFixed(0);
-        this.dineroTotal.toFixed(0);
-
-        this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril);
+        
         this.app.textFont(this.fuente2);
         this.app.textAlign(this.app.LEFTH);
         this.app.textSize(24);
@@ -496,10 +487,11 @@ class Logica {
         }
 
         if (this.pantalla == 7 || this.pantalla == 8 || this.pantalla == 9 || this.pantalla == 10 || this.pantalla == 11 || this.pantalla == 12 || this.pantalla == 13 || this.pantalla == 14 || this.pantalla == 15) {
+            this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril.toFixed(0));
             this.app.image(this.meses, 0, 0);
             this.app.text(": " + this.precioBarril.toFixed(0) + " " + "USD", 230, 55);
             this.app.text(": x " + this.cantidadBarriles, 485, 55);
-            this.app.text(": " + this.dinero.toFixed(0) + " " + "USD", 775, 55);
+            this.app.text(": " + this.dinero + " " + "USD", 775, 55);
             this.app.text(": " + this.dineroTotal.toFixed(0) + " " + "USD", 1030, 55);
 
             if (this.compra || this.vende) {
@@ -512,7 +504,7 @@ class Logica {
 
                 if (this.compra) {
                     for (let i = 0; i < 20; i++) {
-                        if (this.precioBarril * (100 + (i * 100)) <= this.dinero) {
+                        if (this.precioBarril.toFixed(0) * (100 + (i * 100)) <= this.dinero) {
                             this.booleansBotones[i] = true;
                         }
                     }
