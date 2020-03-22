@@ -216,27 +216,27 @@ class Logica {
 
                 if (this.vende && this.barrilesVendidos != 0) {
                     if (this.app.mouseX > 684 && this.app.mouseX < 934 && this.app.mouseY > 567 && this.app.mouseY < 637) {
-                        this.dinero += (this.precioBarril.toFixed(0) * this.barrilesVendidos);
+                        this.pasa = true;
                         this.cantidadBarriles -= this.barrilesVendidos;
-                        this.vende = false;
+                        this.dinero += (this.precioBarril.toFixed(0) * this.barrilesVendidos);
+                        this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril.toFixed(0));
                         this.barrilesVendidos = 0;
-                        this.pantalla++;
+                        this.vende = false;
                         this.precioBarril += ((this.precioBarril.toFixed(0) * this.porcentaje)/100);
                         this.precioBarril.toFixed(0);
-                        this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril.toFixed(0));
                     }
                 }
 
                 if (this.compra && this.barrilesComprados != 0) {
                     if (this.app.mouseX > 684 && this.app.mouseX < 934 && this.app.mouseY > 567 && this.app.mouseY < 637) {
-                        this.dinero -= (this.precioBarril.toFixed(0) * this.barrilesComprados);
+                        this.pasa = true;
                         this.cantidadBarriles += this.barrilesComprados;
-                        this.compra = false;
+                        this.dinero -= (this.precioBarril.toFixed(0) * this.barrilesComprados);
+                        this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril.toFixed(0));
                         this.barrilesComprados = 0;
-                        this.pantalla++;
+                        this.compra = false;
                         this.precioBarril += ((this.precioBarril.toFixed(0) * this.porcentaje)/100);
                         this.precioBarril.toFixed(0);
-                        this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril.toFixed(0));
                     }
                 }
                 for (let i = 0; i < 20; i++) {
@@ -254,9 +254,7 @@ class Logica {
         this.app.textSize(24);
         if (this.contar == true) {
             this.contador++;
-        } else {
-
-        }
+        } 
 
         this.contar = true;
 
@@ -396,18 +394,18 @@ class Logica {
                     this,this.puntaje = 0;
                 }
 
-                if(this.dineroTotal > 150000 && this.dineroTotal < 450000){
+                if(this.dineroTotal > 150000 && this.dineroTotal < 190000){
                     this,this.puntaje = 5;
                 }
 
-                if(this.dineroTotal > 450000 && this.dineroTotal < 900000){
+                if(this.dineroTotal > 190000 && this.dineroTotal < 220000){
                     this,this.puntaje = 10;
                 }
 
-                if(this.dineroTotal > 900000 && this.dineroTotal < 1350000){
+                if(this.dineroTotal > 22000 && this.dineroTotal < 250000){
                     this,this.puntaje = 15;
                 }
-                if(this.dineroTotal > 1350000){
+                if(this.dineroTotal > 250000){
                     this,this.puntaje = 20;
                 }
                 break;
@@ -431,7 +429,7 @@ class Logica {
                 break;
 
             case 4:
-                this.porcentaje = +10;
+                this.porcentaje = +30;
                 break;
 
             case 5:
@@ -439,11 +437,11 @@ class Logica {
                 break;
 
             case 6:
-                this.porcentaje = +22;
+                this.porcentaje = +40;
                 break;
 
             case 7:
-                this.porcentaje = +8;
+                this.porcentaje = +22;
                 break;
 
             case 8:
@@ -451,7 +449,7 @@ class Logica {
                 break;
 
             case 9:
-                this.porcentaje = -0.10;
+                this.porcentaje = -10;
                 break;
             default:
                 break;
@@ -542,7 +540,7 @@ class Logica {
                 }
             }
         }
-       // this.app.text("X:" + this.app.mouseX + " " + "Y:" + this.app.mouseY, this.app.mouseX, this.app.mouseY);
+        this.app.text("X:" + this.app.mouseX + " " + "Y:" + this.app.mouseY, this.app.mouseX, this.app.mouseY);
     }
 }
 
