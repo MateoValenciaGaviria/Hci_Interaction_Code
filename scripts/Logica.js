@@ -10,13 +10,13 @@ class Logica {
 
         this.pantalla = 0;
 
-        this.inicio = app.loadImage("./img/Pantalla Inicial.png");
+        this.inicio = app.loadImage("./img/PantallaInicial.png");
         this.intro = app.loadImage("./img/Introducción.png");
-        this.intro3 = app.loadImage("./img/Introducción tres.png");
-        this.intro4 = app.loadImage("./img/Introducción cuatro.png");
-        this.intro5 = app.loadImage("./img/Introducción cinco.png");
-        this.intro6 = app.loadImage("./img/Introducción seis.png");
-        this.final = app.loadImage("./img/Pantalla Final.png");
+        this.intro3 = app.loadImage("./img/Introduccióntres.png");
+        this.intro4 = app.loadImage("./img/Introduccióncuatro.png");
+        this.intro5 = app.loadImage("./img/Introduccióncinco.png");
+        this.intro6 = app.loadImage("./img/Introducciónseis.png");
+        this.final = app.loadImage("./img/PantallaFinal.png");
 
         this.btnNext = new Elemento(this.app, ("./img/BotonPasar.png"), 1149, 654);
 
