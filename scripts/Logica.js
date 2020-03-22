@@ -8,7 +8,7 @@ class Logica {
 
         this.precio = 1;
 
-        this.pantalla = 0;
+        this.pantalla = 6;
 
         this.inicio = app.loadImage("./img/Pantalla Inicial.png");
         this.intro = app.loadImage("./img/Introducción.png");
@@ -198,7 +198,7 @@ class Logica {
 
             if (this.app.mouseX > 508 && this.app.mouseX < 757 && this.app.mouseY > 632 && this.app.mouseY < 702) {
                 this.pasa = true;
-                this.precioBarril += this.precioBarril * this.porcentaje;
+                this.precioBarril += (this.precioBarril * this.porcentaje);
             }
 
             if (this.vende || this.compra) {
@@ -216,7 +216,7 @@ class Logica {
                         this.vende = false;
                         this.barrilesVendidos = 0;
                         this.pantalla++;
-                        this.precioBarril += this.precioBarril * this.porcentaje;
+                        this.precioBarril += (this.precioBarril * this.porcentaje);
                     }
                 }
 
@@ -227,7 +227,7 @@ class Logica {
                         this.compra = false;
                         this.barrilesComprados = 0;
                         this.pantalla++;
-                        this.precioBarril += this.precioBarril * this.porcentaje;
+                        this.precioBarril += (this.precioBarril * this.porcentaje);
                     }
                 }
                 for (let i = 0; i < 20; i++) {
@@ -330,47 +330,46 @@ class Logica {
             case 7:
                 this.contar = false;
                 this.app.image(this.mes1, 0, 0);
-                this.precio = 1;
+                this.precio = 2;
                 break;
 
             case 8:
                 this.app.image(this.mes2, 0, 0);
-                this.precio = 2;
+                this.precio = 3;
                 break;
 
             case 9:
                 this.app.image(this.mes3, 0, 0);
-                this.precio = 3;
+                this.precio = 4;
                 break;
 
             case 10:
                 this.app.image(this.mes4, 0, 0);
-                this.precio = 4;
+                this.precio = 5;
                 break;
 
             case 11:
                 this.app.image(this.mes5, 0, 0);
-                this.precio = 5;
+                this.precio = 6;
                 break;
 
             case 12:
                 this.app.image(this.mes6, 0, 0);
-                this.precio = 6;
+                this.precio = 7;
                 break;
 
             case 13:
                 this.app.image(this.mes7, 0, 0);
-                this.precio = 7;
+                this.precio = 8;
                 break;
 
             case 14:
                 this.app.image(this.mes8, 0, 0);
-                this.precio = 8;
+                this.precio = 9;
                 break;
 
             case 15:
                 this.app.image(this.mes9, 0, 0);
-                this.precio = 9;
                 break;
 
             case 16:

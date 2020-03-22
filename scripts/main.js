@@ -13,6 +13,5 @@ new p5(function(sketch){
     sketch.mousePressed = function(){
         logica.mouse();
     }
-
-
+    
 });
