@@ -4,14 +4,14 @@ class Logica {
         this.app = app;
         this.precio = 1;
 
-        this.pantalla = 7;
+        this.pantalla = -1;
         this.inicio = app.loadImage("./img/Pantalla Inicial.png");
         this.intro = app.loadImage("./img/Introducción.png");
         this.intro2 = app.loadImage("./img/Introducción dos.png");
         this.intro3 = app.loadImage("./img/Introducción tres.png");
         this.intro4 = app.loadImage("./img/Introducción cuatro.png");
         this.intro5 = app.loadImage("./img/Introducción cinco.png");
-        this.btnNext = app.loadImage("./img/BotonPasar.png");
+        this.btnNext = new Elemento(this.app, ("./img/BotonPasar.png"), 1018, 650);
         this.modal1 = app.loadImage("./img/modal.png");
 
         this.instrucciones = app.loadImage("./img/Instrucciones.png");
@@ -56,7 +56,11 @@ class Logica {
                 break;
 
             case 4:
-                if (this.app.mouseX > 1018 && this.app.mouseX < 1200 && this.app.mouseY > 650 && this.app.mouseY < 720) {
+                /* if (this.app.mouseX > 1018 && this.app.mouseX < 1200 && this.app.mouseY > 650 && this.app.mouseY < 720) {
+                     this.pantalla = 5;
+                 }*/
+
+                if (this.btnNext.isSobre()) {
                     this.pantalla = 5;
                 }
                 break;
@@ -265,7 +269,7 @@ class Logica {
         } else {
             this.contador
         }
-this.contador = true;
+        this.contar = true;
 
         console.log(this.contador);
         console.log(this.pantalla);
@@ -626,8 +630,10 @@ this.contador = true;
         }
 
         if (this.pantalla == 4 && this.modalB1 == true && this.modalB2 == true && this.modalB3 == true && this.modalB4 == true && this.modalB5 == true) {
-            this.app.image(this.btnNext, 1018, 650);
+            this.btnNext.pintar();
         }
+        /*this.app.image(this.btnNext, 1018, 650);
+*/
 
 
     }
