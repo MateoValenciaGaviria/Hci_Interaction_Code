@@ -176,7 +176,7 @@ class Logica {
 
             case 6:
                 if(this.btnJugar.isSobre()){
-                    this.pantalla = 7;
+                    this.pasa = true;
                     this.precioBarril += this.precioBarril * this.porcentaje;
                 }
                 break;
@@ -195,7 +195,7 @@ class Logica {
             }
 
             if (this.app.mouseX > 508 && this.app.mouseX < 757 && this.app.mouseY > 632 && this.app.mouseY < 702) {
-                this.pasa ++;
+                this.pasa = true;
                 this.precioBarril += this.precioBarril * this.porcentaje;
             }
 
