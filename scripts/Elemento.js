@@ -18,7 +18,7 @@ class Elemento {
     }
   
     pintar() {
-      this.app.imageMode(this.app.CORNER);
+      this.app.imageMode(this.app.CENTER);
       this.app.image(this.parte, this.pos.x, this.pos.y);
     }
    

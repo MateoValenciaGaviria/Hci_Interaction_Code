@@ -4,15 +4,16 @@ class Logica {
         this.app = app;
         this.precio = 1;
 
-        this.pantalla = -1;
+        this.pantalla = 7;
         this.inicio = app.loadImage("./img/Pantalla Inicial.png");
         this.intro = app.loadImage("./img/Introducción.png");
         this.intro2 = app.loadImage("./img/Introducción dos.png");
         this.intro3 = app.loadImage("./img/Introducción tres.png");
         this.intro4 = app.loadImage("./img/Introducción cuatro.png");
         this.intro5 = app.loadImage("./img/Introducción cinco.png");
-        this.btnNext = new Elemento(this.app, ("./img/BotonPasar.png"), 1018, 650);
+        this.btnNext = new Elemento(this.app, ("./img/BotonPasar.png"), 1149, 654);
         this.modal1 = app.loadImage("./img/modal.png");
+
 
         this.instrucciones = app.loadImage("./img/Instrucciones.png");
         this.meses = app.loadImage("./img/Meses.png");
@@ -20,6 +21,30 @@ class Logica {
         this.vender = app.loadImage("./img/ModalparaVender.png");
         this.fuente = app.loadFont("./fonts/RobotoCondensed-Bold.ttf");
         this.fuente2 = app.loadFont("./fonts/RobotoCondensed-Regular.ttf");
+
+
+        this.btnCtdBarril1 = new Elemento(this.app, "./img/Group 21.png", 184, 209);
+        this.btnCtdBarril2 = new Elemento(this.app, "./img/Group 22.png", 324, 209);
+        this.btnCtdBarril3 = new Elemento(this.app, "./img/Group 23.png", 466, 209);
+        this.btnCtdBarril4 = new Elemento(this.app, "./img/Group 24.png", 607, 209);
+        this.btnCtdBarril5 = new Elemento(this.app, "./img/Group 25.png", 184, 281);
+        this.btnCtdBarril6 = new Elemento(this.app, "./img/Group 26.png", 324, 281);
+        this.btnCtdBarril7 = new Elemento(this.app, "./img/Group 27.png", 466, 281);
+        this.btnCtdBarril8 = new Elemento(this.app, "./img/Group 28.png", 607, 281);
+        this.btnCtdBarril9 = new Elemento(this.app, "./img/Group 29.png", 184, 353);
+        this.btnCtdBarril10 = new Elemento(this.app, "./img/Group 30.png", 324, 353);
+        this.btnCtdBarril11 = new Elemento(this.app, "./img/Group 31.png", 466, 353);
+        this.btnCtdBarril12 = new Elemento(this.app, "./img/Group 32.png", 607, 353);
+        this.btnCtdBarril13 = new Elemento(this.app, "./img/Group 33.png", 324, 425);
+        this.btnCtdBarril14 = new Elemento(this.app, "./img/Group 34.png", 466, 425);
+        this.btnCtdBarril15 = new Elemento(this.app, "./img/Group 35.png", 607, 425);
+        this.btnCtdBarril16 = new Elemento(this.app, "./img/Group 36.png", 184, 425);
+        this.btnCtdBarril17 = new Elemento(this.app, "./img/Group 37.png", 324, 497);
+        this.btnCtdBarril18 = new Elemento(this.app, "./img/Group 38.png", 184, 497);
+        this.btnCtdBarril19 = new Elemento(this.app, "./img/Group 39.png", 466, 497);
+        this.btnCtdBarril20 = new Elemento(this.app, "./img/Group 40.png", 607, 497);
+
+
         this.modalB1 = false;
         this.modalB2 = false;
         this.modalB3 = false;
@@ -29,7 +54,7 @@ class Logica {
 
         this.dinero = 100000;
 
-        this.barriles;
+
         this.barrilesD = 1000;
 
         this.total;
@@ -48,6 +73,127 @@ class Logica {
 
     mouse() {
 
+        if (this.btnCtdBarril1.isSobre && this.compra == true) {
+            this.dinero - (this.valorMes * 100);
+        }
+        if (this.btnCtdBarril2.isSobre && this.compra == true) {
+            this.dinero - (this.valorMes * 200);
+        }
+        if (this.btnCtdBarril3.isSobre && this.compra == true) {
+            this.dinero - (this.valorMes * 300);
+        }
+        if (this.btnCtdBarril4.isSobre && this.compra == true) {
+            this.dinero - (this.valorMes * 400);
+        }
+        if (this.btnCtdBarril5.isSobre && this.compra == true) {
+            this.dinero - (this.valorMes * 500);
+        }
+        if (this.btnCtdBarril6.isSobre && this.compra == true) {
+            this.dinero - (this.valorMes * 600);
+        }
+        if (this.btnCtdBarril7.isSobre && this.compra == true) {
+            this.dinero - (this.valorMes * 700);
+        }
+        if (this.btnCtdBarril8.isSobre && this.compra == true) {
+            this.dinero - (this.valorMes * 800);
+        }
+        if (this.btnCtdBarril9.isSobre && this.compra == true) {
+            this.dinero - (this.valorMes * 900);
+        }
+        if (this.btnCtdBarril10.isSobre && this.compra == true) {
+            this.dinero - (this.valorMes * 1000);
+        }
+        if (this.btnCtdBarril11.isSobre && this.compra == true) {
+            this.dinero - (this.valorMes * 1100);
+        }
+        if (this.btnCtdBarril12.isSobre && this.compra == true) {
+            this.dinero - (this.valorMes * 1200);
+        }
+        if (this.btnCtdBarril13.isSobre && this.compra == true) {
+            this.dinero - (this.valorMes * 1300);
+        }
+        if (this.btnCtdBarril14.isSobre && this.compra == true) {
+            this.dinero - (this.valorMes * 1400);
+        }
+        if (this.btnCtdBarril15.isSobre && this.compra == true) {
+            this.dinero - (this.valorMes * 1500);
+        }
+        if (this.btnCtdBarril16.isSobre && this.compra == true) {
+            this.dinero - (this.valorMes * 1600);
+        }
+        if (this.btnCtdBarril17.isSobre && this.compra == true) {
+            this.dinero - (this.valorMes * 1700);
+        }
+        if (this.btnCtdBarril18.isSobre && this.compra == true) {
+            this.dinero - (this.valorMes * 1800);
+        }
+        if (this.btnCtdBarril19.isSobre && this.compra == true) {
+            this.dinero - (this.valorMes * 1900);
+        }
+        if (this.btnCtdBarril20.isSobre && this.compra == true) {
+            this.dinero - (this.valorMes * 2000);
+        }
+
+        if (this.btnCtdBarril1.isSobre && this.vende == true) {
+            this.dinero + (this.valorMes * 100);
+        }
+        if (this.btnCtdBarril2.isSobre && this.vende == true) {
+            this.dinero + (this.valorMes * 200);
+        }
+        if (this.btnCtdBarril3.isSobre && this.vende == true) {
+            this.dinero + (this.valorMes * 300);
+        }
+        if (this.btnCtdBarril4.isSobre && this.vende == true) {
+            this.dinero + (this.valorMes * 400);
+        }
+        if (this.btnCtdBarril5.isSobre && this.vende == true) {
+            this.dinero + (this.valorMes * 500);
+        }
+        if (this.btnCtdBarril6.isSobre && this.vende == true) {
+            this.dinero + (this.valorMes * 600);
+        }
+        if (this.btnCtdBarril7.isSobre && this.vende == true) {
+            this.dinero + (this.valorMes * 700);
+        }
+        if (this.btnCtdBarril8.isSobre && this.vende == true) {
+            this.dinero + (this.valorMes * 800);
+        }
+        if (this.btnCtdBarril9.isSobre && this.vende == true) {
+            this.dinero + (this.valorMes * 900);
+        }
+        if (this.btnCtdBarril10.isSobre && this.vende == true) {
+            this.dinero + (this.valorMes * 1000);
+        }
+        if (this.btnCtdBarril11.isSobre && this.vende == true) {
+            this.dinero + (this.valorMes * 1100);
+        }
+        if (this.btnCtdBarril12.isSobre && this.vende == true) {
+            this.dinero + (this.valorMes * 1200);
+        }
+        if (this.btnCtdBarril13.isSobre && this.vende == true) {
+            this.dinero + (this.valorMes * 1300);
+        }
+        if (this.btnCtdBarril14.isSobre && this.vende == true) {
+            this.dinero + (this.valorMes * 1400);
+        }
+        if (this.btnCtdBarril15.isSobre && this.vende == true) {
+            this.dinero + (this.valorMes * 1500);
+        }
+        if (this.btnCtdBarril16.isSobre && this.vende == true) {
+            this.dinero + (this.valorMes * 1600);
+        }
+        if (this.btnCtdBarril17.isSobre && this.vende == true) {
+            this.dinero + (this.valorMes * 1700);
+        }
+        if (this.btnCtdBarril18.isSobre && this.vende == true) {
+            this.dinero + (this.valorMes * 1800);
+        }
+        if (this.btnCtdBarril19.isSobre && this.vende == true) {
+            this.dinero + (this.valorMes * 1900);
+        }
+        if (this.btnCtdBarril20.isSobre && this.vende == true) {
+            this.dinero + (this.valorMes * 2000);
+        }
         switch (this.pantalla) {
             case 3:
                 if (this.app.mouseX > 500 && this.app.mouseX < 777 && this.app.mouseY > 520 && this.app.mouseY < 575) {
@@ -132,7 +278,7 @@ class Logica {
                 if (this.app.mouseX > 508 && this.app.mouseX < 758 && this.app.mouseY > 632 && this.app.mouseY < 702) {
                     this.pantalla++;
                 }
-                if (this.app.mouseX > 63 && this.app.mouseX < 313 && this.app.mouseY > 632 && this.app.mouseY < 702) {
+                if (this.ap.mouseX > 63 && this.app.mouseX < 313 && this.app.mouseY > 632 && this.app.mouseY < 702) {
                     this.compra = true;
                 }
 
@@ -274,6 +420,7 @@ class Logica {
         console.log(this.contador);
         console.log(this.pantalla);
         console.log(this.valorMes);
+        console.log(this.dinero);
 
 
 
@@ -360,11 +507,52 @@ class Logica {
                 if (this.compra) {
                     this.app.imageMode(this.app.CORNER);
                     this.app.image(this.comprar, 0, 0);
+
+                    this.btnCtdBarril1.pintar();
+                    this.btnCtdBarril2.pintar();
+                    this.btnCtdBarril3.pintar();
+                    this.btnCtdBarril4.pintar();
+                    this.btnCtdBarril5.pintar();
+                    this.btnCtdBarril6.pintar();
+                    this.btnCtdBarril7.pintar();
+                    this.btnCtdBarril8.pintar();
+                    this.btnCtdBarril9.pintar();
+                    this.btnCtdBarril10.pintar();
+                    this.btnCtdBarril11.pintar();
+                    this.btnCtdBarril12.pintar();
+                    this.btnCtdBarril13.pintar();
+                    this.btnCtdBarril14.pintar();
+                    this.btnCtdBarril15.pintar();
+                    this.btnCtdBarril16.pintar();
+                    this.btnCtdBarril17.pintar();
+                    this.btnCtdBarril18.pintar();
+                    this.btnCtdBarril19.pintar();
+                    this.btnCtdBarril20.pintar();
                 }
 
                 if (this.vende) {
                     this.app.imageMode(this.app.CORNER);
                     this.app.image(this.vender, 0, 0);
+                    this.btnCtdBarril1.pintar();
+                    this.btnCtdBarril2.pintar();
+                    this.btnCtdBarril3.pintar();
+                    this.btnCtdBarril4.pintar();
+                    this.btnCtdBarril5.pintar();
+                    this.btnCtdBarril6.pintar();
+                    this.btnCtdBarril7.pintar();
+                    this.btnCtdBarril8.pintar();
+                    this.btnCtdBarril9.pintar();
+                    this.btnCtdBarril10.pintar();
+                    this.btnCtdBarril11.pintar();
+                    this.btnCtdBarril12.pintar();
+                    this.btnCtdBarril13.pintar();
+                    this.btnCtdBarril14.pintar();
+                    this.btnCtdBarril15.pintar();
+                    this.btnCtdBarril16.pintar();
+                    this.btnCtdBarril17.pintar();
+                    this.btnCtdBarril18.pintar();
+                    this.btnCtdBarril19.pintar();
+                    this.btnCtdBarril20.pintar();
                 }
                 break;
 
@@ -380,11 +568,51 @@ class Logica {
                 if (this.compra) {
                     this.app.imageMode(this.app.CORNER);
                     this.app.image(this.comprar, 0, 0);
+                    this.btnCtdBarril1.pintar();
+                    this.btnCtdBarril2.pintar();
+                    this.btnCtdBarril3.pintar();
+                    this.btnCtdBarril4.pintar();
+                    this.btnCtdBarril5.pintar();
+                    this.btnCtdBarril6.pintar();
+                    this.btnCtdBarril7.pintar();
+                    this.btnCtdBarril8.pintar();
+                    this.btnCtdBarril9.pintar();
+                    this.btnCtdBarril10.pintar();
+                    this.btnCtdBarril11.pintar();
+                    this.btnCtdBarril12.pintar();
+                    this.btnCtdBarril13.pintar();
+                    this.btnCtdBarril14.pintar();
+                    this.btnCtdBarril15.pintar();
+                    this.btnCtdBarril16.pintar();
+                    this.btnCtdBarril17.pintar();
+                    this.btnCtdBarril18.pintar();
+                    this.btnCtdBarril19.pintar();
+                    this.btnCtdBarril20.pintar();
                 }
 
                 if (this.vende) {
                     this.app.imageMode(this.app.CORNER);
                     this.app.image(this.vender, 0, 0);
+                    this.btnCtdBarril1.pintar();
+                    this.btnCtdBarril2.pintar();
+                    this.btnCtdBarril3.pintar();
+                    this.btnCtdBarril4.pintar();
+                    this.btnCtdBarril5.pintar();
+                    this.btnCtdBarril6.pintar();
+                    this.btnCtdBarril7.pintar();
+                    this.btnCtdBarril8.pintar();
+                    this.btnCtdBarril9.pintar();
+                    this.btnCtdBarril10.pintar();
+                    this.btnCtdBarril11.pintar();
+                    this.btnCtdBarril12.pintar();
+                    this.btnCtdBarril13.pintar();
+                    this.btnCtdBarril14.pintar();
+                    this.btnCtdBarril15.pintar();
+                    this.btnCtdBarril16.pintar();
+                    this.btnCtdBarril17.pintar();
+                    this.btnCtdBarril18.pintar();
+                    this.btnCtdBarril19.pintar();
+                    this.btnCtdBarril20.pintar();
                 }
 
                 break;
@@ -401,11 +629,51 @@ class Logica {
                 if (this.compra) {
                     this.app.imageMode(this.app.CORNER);
                     this.app.image(this.comprar, 0, 0);
+                    this.btnCtdBarril1.pintar();
+                    this.btnCtdBarril2.pintar();
+                    this.btnCtdBarril3.pintar();
+                    this.btnCtdBarril4.pintar();
+                    this.btnCtdBarril5.pintar();
+                    this.btnCtdBarril6.pintar();
+                    this.btnCtdBarril7.pintar();
+                    this.btnCtdBarril8.pintar();
+                    this.btnCtdBarril9.pintar();
+                    this.btnCtdBarril10.pintar();
+                    this.btnCtdBarril11.pintar();
+                    this.btnCtdBarril12.pintar();
+                    this.btnCtdBarril13.pintar();
+                    this.btnCtdBarril14.pintar();
+                    this.btnCtdBarril15.pintar();
+                    this.btnCtdBarril16.pintar();
+                    this.btnCtdBarril17.pintar();
+                    this.btnCtdBarril18.pintar();
+                    this.btnCtdBarril19.pintar();
+                    this.btnCtdBarril20.pintar();
                 }
 
                 if (this.vende) {
                     this.app.imageMode(this.app.CORNER);
                     this.app.image(this.vender, 0, 0);
+                    this.btnCtdBarril1.pintar();
+                    this.btnCtdBarril2.pintar();
+                    this.btnCtdBarril3.pintar();
+                    this.btnCtdBarril4.pintar();
+                    this.btnCtdBarril5.pintar();
+                    this.btnCtdBarril6.pintar();
+                    this.btnCtdBarril7.pintar();
+                    this.btnCtdBarril8.pintar();
+                    this.btnCtdBarril9.pintar();
+                    this.btnCtdBarril10.pintar();
+                    this.btnCtdBarril11.pintar();
+                    this.btnCtdBarril12.pintar();
+                    this.btnCtdBarril13.pintar();
+                    this.btnCtdBarril14.pintar();
+                    this.btnCtdBarril15.pintar();
+                    this.btnCtdBarril16.pintar();
+                    this.btnCtdBarril17.pintar();
+                    this.btnCtdBarril18.pintar();
+                    this.btnCtdBarril19.pintar();
+                    this.btnCtdBarril20.pintar();
                 }
                 break;
 
@@ -421,11 +689,51 @@ class Logica {
                 if (this.compra) {
                     this.app.imageMode(this.app.CORNER);
                     this.app.image(this.comprar, 0, 0);
+                    this.btnCtdBarril1.pintar();
+                    this.btnCtdBarril2.pintar();
+                    this.btnCtdBarril3.pintar();
+                    this.btnCtdBarril4.pintar();
+                    this.btnCtdBarril5.pintar();
+                    this.btnCtdBarril6.pintar();
+                    this.btnCtdBarril7.pintar();
+                    this.btnCtdBarril8.pintar();
+                    this.btnCtdBarril9.pintar();
+                    this.btnCtdBarril10.pintar();
+                    this.btnCtdBarril11.pintar();
+                    this.btnCtdBarril12.pintar();
+                    this.btnCtdBarril13.pintar();
+                    this.btnCtdBarril14.pintar();
+                    this.btnCtdBarril15.pintar();
+                    this.btnCtdBarril16.pintar();
+                    this.btnCtdBarril17.pintar();
+                    this.btnCtdBarril18.pintar();
+                    this.btnCtdBarril19.pintar();
+                    this.btnCtdBarril20.pintar();
                 }
 
                 if (this.vende) {
                     this.app.imageMode(this.app.CORNER);
                     this.app.image(this.vender, 0, 0);
+                    this.btnCtdBarril1.pintar();
+                    this.btnCtdBarril2.pintar();
+                    this.btnCtdBarril3.pintar();
+                    this.btnCtdBarril4.pintar();
+                    this.btnCtdBarril5.pintar();
+                    this.btnCtdBarril6.pintar();
+                    this.btnCtdBarril7.pintar();
+                    this.btnCtdBarril8.pintar();
+                    this.btnCtdBarril9.pintar();
+                    this.btnCtdBarril10.pintar();
+                    this.btnCtdBarril11.pintar();
+                    this.btnCtdBarril12.pintar();
+                    this.btnCtdBarril13.pintar();
+                    this.btnCtdBarril14.pintar();
+                    this.btnCtdBarril15.pintar();
+                    this.btnCtdBarril16.pintar();
+                    this.btnCtdBarril17.pintar();
+                    this.btnCtdBarril18.pintar();
+                    this.btnCtdBarril19.pintar();
+                    this.btnCtdBarril20.pintar();
                 }
                 break;
 
@@ -441,11 +749,51 @@ class Logica {
                 if (this.compra) {
                     this.app.imageMode(this.app.CORNER);
                     this.app.image(this.comprar, 0, 0);
+                    this.btnCtdBarril1.pintar();
+                    this.btnCtdBarril2.pintar();
+                    this.btnCtdBarril3.pintar();
+                    this.btnCtdBarril4.pintar();
+                    this.btnCtdBarril5.pintar();
+                    this.btnCtdBarril6.pintar();
+                    this.btnCtdBarril7.pintar();
+                    this.btnCtdBarril8.pintar();
+                    this.btnCtdBarril9.pintar();
+                    this.btnCtdBarril10.pintar();
+                    this.btnCtdBarril11.pintar();
+                    this.btnCtdBarril12.pintar();
+                    this.btnCtdBarril13.pintar();
+                    this.btnCtdBarril14.pintar();
+                    this.btnCtdBarril15.pintar();
+                    this.btnCtdBarril16.pintar();
+                    this.btnCtdBarril17.pintar();
+                    this.btnCtdBarril18.pintar();
+                    this.btnCtdBarril19.pintar();
+                    this.btnCtdBarril20.pintar();
                 }
 
                 if (this.vende) {
                     this.app.imageMode(this.app.CORNER);
                     this.app.image(this.vender, 0, 0);
+                    this.btnCtdBarril1.pintar();
+                    this.btnCtdBarril2.pintar();
+                    this.btnCtdBarril3.pintar();
+                    this.btnCtdBarril4.pintar();
+                    this.btnCtdBarril5.pintar();
+                    this.btnCtdBarril6.pintar();
+                    this.btnCtdBarril7.pintar();
+                    this.btnCtdBarril8.pintar();
+                    this.btnCtdBarril9.pintar();
+                    this.btnCtdBarril10.pintar();
+                    this.btnCtdBarril11.pintar();
+                    this.btnCtdBarril12.pintar();
+                    this.btnCtdBarril13.pintar();
+                    this.btnCtdBarril14.pintar();
+                    this.btnCtdBarril15.pintar();
+                    this.btnCtdBarril16.pintar();
+                    this.btnCtdBarril17.pintar();
+                    this.btnCtdBarril18.pintar();
+                    this.btnCtdBarril19.pintar();
+                    this.btnCtdBarril20.pintar();
                 }
                 break;
 
@@ -461,11 +809,51 @@ class Logica {
                 if (this.compra) {
                     this.app.imageMode(this.app.CORNER);
                     this.app.image(this.comprar, 0, 0);
+                    this.btnCtdBarril1.pintar();
+                    this.btnCtdBarril2.pintar();
+                    this.btnCtdBarril3.pintar();
+                    this.btnCtdBarril4.pintar();
+                    this.btnCtdBarril5.pintar();
+                    this.btnCtdBarril6.pintar();
+                    this.btnCtdBarril7.pintar();
+                    this.btnCtdBarril8.pintar();
+                    this.btnCtdBarril9.pintar();
+                    this.btnCtdBarril10.pintar();
+                    this.btnCtdBarril11.pintar();
+                    this.btnCtdBarril12.pintar();
+                    this.btnCtdBarril13.pintar();
+                    this.btnCtdBarril14.pintar();
+                    this.btnCtdBarril15.pintar();
+                    this.btnCtdBarril16.pintar();
+                    this.btnCtdBarril17.pintar();
+                    this.btnCtdBarril18.pintar();
+                    this.btnCtdBarril19.pintar();
+                    this.btnCtdBarril20.pintar();
                 }
 
                 if (this.vende) {
                     this.app.imageMode(this.app.CORNER);
                     this.app.image(this.vender, 0, 0);
+                    this.btnCtdBarril1.pintar();
+                    this.btnCtdBarril2.pintar();
+                    this.btnCtdBarril3.pintar();
+                    this.btnCtdBarril4.pintar();
+                    this.btnCtdBarril5.pintar();
+                    this.btnCtdBarril6.pintar();
+                    this.btnCtdBarril7.pintar();
+                    this.btnCtdBarril8.pintar();
+                    this.btnCtdBarril9.pintar();
+                    this.btnCtdBarril10.pintar();
+                    this.btnCtdBarril11.pintar();
+                    this.btnCtdBarril12.pintar();
+                    this.btnCtdBarril13.pintar();
+                    this.btnCtdBarril14.pintar();
+                    this.btnCtdBarril15.pintar();
+                    this.btnCtdBarril16.pintar();
+                    this.btnCtdBarril17.pintar();
+                    this.btnCtdBarril18.pintar();
+                    this.btnCtdBarril19.pintar();
+                    this.btnCtdBarril20.pintar();
                 }
                 break;
 
@@ -481,11 +869,51 @@ class Logica {
                 if (this.compra) {
                     this.app.imageMode(this.app.CORNER);
                     this.app.image(this.comprar, 0, 0);
+                    this.btnCtdBarril1.pintar();
+                    this.btnCtdBarril2.pintar();
+                    this.btnCtdBarril3.pintar();
+                    this.btnCtdBarril4.pintar();
+                    this.btnCtdBarril5.pintar();
+                    this.btnCtdBarril6.pintar();
+                    this.btnCtdBarril7.pintar();
+                    this.btnCtdBarril8.pintar();
+                    this.btnCtdBarril9.pintar();
+                    this.btnCtdBarril10.pintar();
+                    this.btnCtdBarril11.pintar();
+                    this.btnCtdBarril12.pintar();
+                    this.btnCtdBarril13.pintar();
+                    this.btnCtdBarril14.pintar();
+                    this.btnCtdBarril15.pintar();
+                    this.btnCtdBarril16.pintar();
+                    this.btnCtdBarril17.pintar();
+                    this.btnCtdBarril18.pintar();
+                    this.btnCtdBarril19.pintar();
+                    this.btnCtdBarril20.pintar();
                 }
 
                 if (this.vende) {
                     this.app.imageMode(this.app.CORNER);
                     this.app.image(this.vender, 0, 0);
+                    this.btnCtdBarril1.pintar();
+                    this.btnCtdBarril2.pintar();
+                    this.btnCtdBarril3.pintar();
+                    this.btnCtdBarril4.pintar();
+                    this.btnCtdBarril5.pintar();
+                    this.btnCtdBarril6.pintar();
+                    this.btnCtdBarril7.pintar();
+                    this.btnCtdBarril8.pintar();
+                    this.btnCtdBarril9.pintar();
+                    this.btnCtdBarril10.pintar();
+                    this.btnCtdBarril11.pintar();
+                    this.btnCtdBarril12.pintar();
+                    this.btnCtdBarril13.pintar();
+                    this.btnCtdBarril14.pintar();
+                    this.btnCtdBarril15.pintar();
+                    this.btnCtdBarril16.pintar();
+                    this.btnCtdBarril17.pintar();
+                    this.btnCtdBarril18.pintar();
+                    this.btnCtdBarril19.pintar();
+                    this.btnCtdBarril20.pintar();
                 }
                 break;
 
@@ -501,12 +929,53 @@ class Logica {
                 if (this.compra) {
                     this.app.imageMode(this.app.CORNER);
                     this.app.image(this.comprar, 0, 0);
+                    this.btnCtdBarril1.pintar();
+                    this.btnCtdBarril2.pintar();
+                    this.btnCtdBarril3.pintar();
+                    this.btnCtdBarril4.pintar();
+                    this.btnCtdBarril5.pintar();
+                    this.btnCtdBarril6.pintar();
+                    this.btnCtdBarril7.pintar();
+                    this.btnCtdBarril8.pintar();
+                    this.btnCtdBarril9.pintar();
+                    this.btnCtdBarril10.pintar();
+                    this.btnCtdBarril11.pintar();
+                    this.btnCtdBarril12.pintar();
+                    this.btnCtdBarril13.pintar();
+                    this.btnCtdBarril14.pintar();
+                    this.btnCtdBarril15.pintar();
+                    this.btnCtdBarril16.pintar();
+                    this.btnCtdBarril17.pintar();
+                    this.btnCtdBarril18.pintar();
+                    this.btnCtdBarril19.pintar();
+                    this.btnCtdBarril20.pintar();
                 }
 
                 if (this.vende) {
                     this.app.imageMode(this.app.CORNER);
                     this.app.image(this.vender, 0, 0);
+                    this.btnCtdBarril1.pintar();
+                    this.btnCtdBarril2.pintar();
+                    this.btnCtdBarril3.pintar();
+                    this.btnCtdBarril4.pintar();
+                    this.btnCtdBarril5.pintar();
+                    this.btnCtdBarril6.pintar();
+                    this.btnCtdBarril7.pintar();
+                    this.btnCtdBarril8.pintar();
+                    this.btnCtdBarril9.pintar();
+                    this.btnCtdBarril10.pintar();
+                    this.btnCtdBarril11.pintar();
+                    this.btnCtdBarril12.pintar();
+                    this.btnCtdBarril13.pintar();
+                    this.btnCtdBarril14.pintar();
+                    this.btnCtdBarril15.pintar();
+                    this.btnCtdBarril16.pintar();
+                    this.btnCtdBarril17.pintar();
+                    this.btnCtdBarril18.pintar();
+                    this.btnCtdBarril19.pintar();
+                    this.btnCtdBarril20.pintar();
                 }
+
                 break;
 
             case 15:
@@ -521,11 +990,51 @@ class Logica {
                 if (this.compra) {
                     this.app.imageMode(this.app.CORNER);
                     this.app.image(this.comprar, 0, 0);
+                    this.btnCtdBarril1.pintar();
+                    this.btnCtdBarril2.pintar();
+                    this.btnCtdBarril3.pintar();
+                    this.btnCtdBarril4.pintar();
+                    this.btnCtdBarril5.pintar();
+                    this.btnCtdBarril6.pintar();
+                    this.btnCtdBarril7.pintar();
+                    this.btnCtdBarril8.pintar();
+                    this.btnCtdBarril9.pintar();
+                    this.btnCtdBarril10.pintar();
+                    this.btnCtdBarril11.pintar();
+                    this.btnCtdBarril12.pintar();
+                    this.btnCtdBarril13.pintar();
+                    this.btnCtdBarril14.pintar();
+                    this.btnCtdBarril15.pintar();
+                    this.btnCtdBarril16.pintar();
+                    this.btnCtdBarril17.pintar();
+                    this.btnCtdBarril18.pintar();
+                    this.btnCtdBarril19.pintar();
+                    this.btnCtdBarril20.pintar();
                 }
 
                 if (this.vende) {
                     this.app.imageMode(this.app.CORNER);
                     this.app.image(this.vender, 0, 0);
+                    this.btnCtdBarril1.pintar();
+                    this.btnCtdBarril2.pintar();
+                    this.btnCtdBarril3.pintar();
+                    this.btnCtdBarril4.pintar();
+                    this.btnCtdBarril5.pintar();
+                    this.btnCtdBarril6.pintar();
+                    this.btnCtdBarril7.pintar();
+                    this.btnCtdBarril8.pintar();
+                    this.btnCtdBarril9.pintar();
+                    this.btnCtdBarril10.pintar();
+                    this.btnCtdBarril11.pintar();
+                    this.btnCtdBarril12.pintar();
+                    this.btnCtdBarril13.pintar();
+                    this.btnCtdBarril14.pintar();
+                    this.btnCtdBarril15.pintar();
+                    this.btnCtdBarril16.pintar();
+                    this.btnCtdBarril17.pintar();
+                    this.btnCtdBarril18.pintar();
+                    this.btnCtdBarril19.pintar();
+                    this.btnCtdBarril20.pintar();
                 }
                 break;
 
