@@ -48,6 +48,8 @@ class Logica {
         this.btnComprarActivado = app.loadImage("./img/BotonComprarActivado.png");
         this.btnComprarDesactivado = app.loadImage("./img/BotonComprarDesactivado.png");
 
+        this.btnJugar = new Elemento(this.app, ("./img/BotonJugar.png"), 640, 652);
+
         this.botonesActivados = [
             this.btnCtdBarril1 = new Elemento(this.app, "./img/btn100.png", 184, 209),
             this.btnCtdBarril2 = new Elemento(this.app, "./img/btn200.png", 324, 209),
@@ -173,8 +175,8 @@ class Logica {
                 break;
 
             case 6:
-                if (this.app.mouseX > 502 && this.app.mouseX < 777 && this.app.mouseY > 622 && this.app.mouseY < 675) {
-                    this.pantalla = 7;
+                if (this.btnJugar.isSobre()) {
+                    this.pasa = true;
                     this.precioBarril += this.precioBarril * this.porcentaje;
                 }
                 break;
@@ -320,6 +322,7 @@ class Logica {
             case 6:
                 this.contar = false;
                 this.app.image(this.instrucciones, 0, 0);
+                this.btnJugar.pintar();
                 break;
 
             case 7:
