@@ -164,7 +164,7 @@ class Logica {
                 break;
 
             case 3:
-                if (this.btnNext.isSobre()) {
+                if (this.btnNext.isSobre() && this.modalB1 == true && this.modalB2 == true && this.modalB3 == true && this.modalB4 == true && this.modalB5 == true ) {
                     this.contar = true;
                     this.pantalla = 4;
                 }
