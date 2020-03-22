@@ -513,7 +513,7 @@ class Logica {
                 }
             }
         }
-        this.app.text("X:" + this.app.mouseX + " " + "Y:" + this.app.mouseY, this.app.mouseX, this.app.mouseY);
+       // this.app.text("X:" + this.app.mouseX + " " + "Y:" + this.app.mouseY, this.app.mouseX, this.app.mouseY);
     }
 }
 
