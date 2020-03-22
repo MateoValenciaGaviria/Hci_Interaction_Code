@@ -164,9 +164,11 @@ class Logica {
                 break;
 
             case 3:
-                if (this.btnNext.isSobre() && this.modalB1 == true && this.modalB2 == true && this.modalB3 == true && this.modalB4 == true && this.modalB5 == true ) {
+                if (this.btnNext.isSobre()) {
+                    if(this.modalB1 == true && this.modalB2 == true && this.modalB3 == true && this.modalB4 == true && this.modalB5 == true ){
+                        this.pantalla = 4;
+                    }
                     this.contar = true;
-                    this.pantalla = 4;
                 }
                 break;
 
@@ -449,27 +451,27 @@ class Logica {
                 break;
         }
 
-        if (this.app.mouseX > 511 && this.app.mouseX < 522 && this.app.mouseY > 339 && this.app.mouseY < 350 && this.pantalla == 4) {
+        if (this.pantalla == 3 && this.app.mouseX > 511 && this.app.mouseX < 522 && this.app.mouseY > 339 && this.app.mouseY < 350) {
             this.app.image(this.modal1, 195, 155);
             this.modalB1 = true;
         }
 
-        if (this.app.mouseX > 629 && this.app.mouseX < 640 && this.app.mouseY > 130 && this.app.mouseY < 141 && this.pantalla == 4) {
+        if (this.pantalla == 3 && this.app.mouseX > 629 && this.app.mouseX < 640 && this.app.mouseY > 130 && this.app.mouseY < 141) {
             this.app.image(this.modal1, 313, 132);
             this.modalB2 = true;
         }
 
-        if (this.app.mouseX > 740 && this.app.mouseX < 751 && this.app.mouseY > 370 && this.app.mouseY < 381 && this.pantalla == 4) {
+        if (this.pantalla == 3 && this.app.mouseX > 740 && this.app.mouseX < 751 && this.app.mouseY > 370 && this.app.mouseY < 381) {
             this.app.image(this.modal1, 424, 182);
             this.modalB3 = true;
         }
 
-        if (this.app.mouseX > 855 && this.app.mouseX < 866 && this.app.mouseY > 258 && this.app.mouseY < 269 && this.pantalla == 4) {
+        if (this.pantalla == 3 && this.app.mouseX > 855 && this.app.mouseX < 866 && this.app.mouseY > 258 && this.app.mouseY < 269) {
             this.app.image(this.modal1, 540, 72);
             this.modalB4 = true;
         }
 
-        if (this.app.mouseX > 970 && this.app.mouseX < 981 && this.app.mouseY > 154 && this.app.mouseY < 165 && this.pantalla == 4) {
+        if (this.pantalla == 3 && this.app.mouseX > 970 && this.app.mouseX < 981 && this.app.mouseY > 154 && this.app.mouseY < 165) {
             this.app.image(this.modal1, 653, 162);
             this.modalB5 = true;
         }
