@@ -8,7 +8,7 @@ class Logica {
 
         this.precio = 1;
 
-        this.pantalla = 6;
+        this.pantalla = 0;
 
         this.inicio = app.loadImage("./img/Pantalla Inicial.png");
         this.intro = app.loadImage("./img/Introducción.png");
