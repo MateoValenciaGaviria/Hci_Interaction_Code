@@ -140,6 +140,7 @@ class Logica {
         this.precioBarril.toFixed(0);
         this.dineroTxt;
         this.dineroTotalTxt;
+        this.cantidadBarrilesTxt;
 
         this.compra = false;
         this.barrilesComprados = 0;
@@ -261,6 +262,7 @@ class Logica {
         }
         this.dineroTxt = this.convertNumToString(this.dinero);
         this.dineroTotalTxt = this.convertNumToString(this.dineroTotal.toFixed(0));
+        this.cantidadBarrilesTxt = this.convertNumToString(this.cantidadBarriles);
     }
 
 
@@ -552,7 +554,7 @@ class Logica {
             }
             this.app.fill('rgb(36,36,36)');
             this.app.text(": " + this.precioBarril.toFixed(0) + " " + "USD por barril", 220, 55);
-            this.app.text(": x " + this.cantidadBarriles, 500, 55);
+            this.app.text(": x " + this.cantidadBarrilesTxt, 500, 55);
             this.app.text(": " + this.dineroTxt + " " + "USD", 775, 55);
             this.app.text(": " + this.dineroTotalTxt + " " + "USD", 1030, 55);
             if (this.compra || this.vende) {
