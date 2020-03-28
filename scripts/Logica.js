@@ -26,7 +26,8 @@ class Logica {
         this.modal4 = app.loadImage("./img/modal4.png");
         this.modal5 = app.loadImage("./img/modal5.png");
 
-        this.instrucciones = app.loadImage("./img/Instrucciones.png");
+        this.instruccion1 = app.loadImage("./img/Instrucciones1.png");
+        this.instruccion2 = app.loadImage("./img/Instrucciones2.png");
 
         this.meses = app.loadImage("./img/Meses.png");
         this.mes1 = app.loadImage("./img/Mes1.png");
@@ -42,6 +43,9 @@ class Logica {
         this.comprar = app.loadImage("./img/ModalparaComprar.png");
         this.vender = app.loadImage("./img/ModalparaVender.png");
 
+        this.flechaRoja = app.loadImage("./img/flecha1.png");
+        this.flechaVerde = app.loadImage("./img/flecha2.png");
+
         this.fuente = app.loadFont("./fonts/RobotoCondensed-Bold.ttf");
         this.fuente2 = app.loadFont("./fonts/RobotoCondensed-Regular.ttf");
 
@@ -50,6 +54,7 @@ class Logica {
         this.btnComprarActivado = app.loadImage("./img/BotonComprarActivado.png");
         this.btnComprarDesactivado = app.loadImage("./img/BotonComprarDesactivado.png");
 
+        this.btnSiguiente = new Elemento(this.app, ("./img/BotonSiguiente.png"), 640, 652);
         this.btnJugar = new Elemento(this.app, ("./img/BotonJugar.png"), 640, 652);
 
         this.botonesActivados = [
@@ -131,14 +136,18 @@ class Logica {
         this.dinero = 100000;
         this.cantidadBarriles = 1000;
         this.precioBarril = 50;
-        this.dineroTotal = this.dinero + ((this.cantidadBarriles * this.precioBarril.toFixed(0))/100);
+        this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril);
         this.precioBarril.toFixed(0);
+        this.dineroTxt;
+        this.dineroTotalTxt;
 
         this.compra = false;
         this.barrilesComprados = 0;
         this.vende = false;
         this.barrilesVendidos = 0;
         this.pasa = false;
+
+        this.porcentaje = 0;
     }
 
     mouse() {
@@ -166,7 +175,7 @@ class Logica {
 
             case 3:
                 if (this.btnNext.isSobre()) {
-                    if(this.modalB1 == true && this.modalB2 == true && this.modalB3 == true && this.modalB4 == true && this.modalB5 == true ){
+                    if (this.modalB1 == true && this.modalB2 == true && this.modalB3 == true && this.modalB4 == true && this.modalB5 == true) {
                         this.pantalla = 4;
                     }
                     this.contar = true;
@@ -180,9 +189,16 @@ class Logica {
                 break;
 
             case 6:
+                if (this.btnSiguiente.isSobre()) {
+                    this.pantalla = 17;
+                }
+                break;
+
+            case 17:
                 if (this.btnJugar.isSobre()) {
+                    this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril.toFixed(0));
+                    this.pantalla = 6;
                     this.pasa = true;
-                    this.precioBarril += ((this.precioBarril * this.porcentaje)/100);
                 }
                 break;
 
@@ -200,10 +216,9 @@ class Logica {
             }
 
             if (this.app.mouseX > 508 && this.app.mouseX < 757 && this.app.mouseY > 632 && this.app.mouseY < 702) {
-                this.pasa = true;
-                this.precioBarril += ((this.precioBarril * this.porcentaje)/100);
-                this.dinero += (this.precioBarril * this.barrilesVendidos);
+                this.precioBarril += ((this.precioBarril.toFixed(0) * this.porcentaje) / 100);
                 this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril.toFixed(0));
+                this.pasa = true;
             }
 
             if (this.vende || this.compra) {
@@ -216,27 +231,27 @@ class Logica {
 
                 if (this.vende && this.barrilesVendidos != 0) {
                     if (this.app.mouseX > 684 && this.app.mouseX < 934 && this.app.mouseY > 567 && this.app.mouseY < 637) {
-                        this.pasa = true;
+                        this.precioBarril += ((this.precioBarril.toFixed(0) * this.porcentaje) / 100);
+                        this.precioBarril.toFixed(0);
                         this.cantidadBarriles -= this.barrilesVendidos;
                         this.dinero += (this.precioBarril.toFixed(0) * this.barrilesVendidos);
                         this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril.toFixed(0));
                         this.barrilesVendidos = 0;
                         this.vende = false;
-                        this.precioBarril += ((this.precioBarril.toFixed(0) * this.porcentaje)/100);
-                        this.precioBarril.toFixed(0);
+                        this.pasa = true;
                     }
                 }
 
                 if (this.compra && this.barrilesComprados != 0) {
                     if (this.app.mouseX > 684 && this.app.mouseX < 934 && this.app.mouseY > 567 && this.app.mouseY < 637) {
-                        this.pasa = true;
+                        this.precioBarril += ((this.precioBarril.toFixed(0) * this.porcentaje) / 100);
+                        this.precioBarril.toFixed(0);
                         this.cantidadBarriles += this.barrilesComprados;
                         this.dinero -= (this.precioBarril.toFixed(0) * this.barrilesComprados);
                         this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril.toFixed(0));
                         this.barrilesComprados = 0;
                         this.compra = false;
-                        this.precioBarril += ((this.precioBarril.toFixed(0) * this.porcentaje)/100);
-                        this.precioBarril.toFixed(0);
+                        this.pasa = true;
                     }
                 }
                 for (let i = 0; i < 20; i++) {
@@ -244,17 +259,19 @@ class Logica {
                 }
             }
         }
+        this.dineroTxt = this.convertNumToString(this.dinero);
+        this.dineroTotalTxt = this.convertNumToString(this.dineroTotal.toFixed(0));
     }
 
 
     pintar() {
-        
+
         this.app.textFont(this.fuente2);
         this.app.textAlign(this.app.LEFTH);
         this.app.textSize(24);
         if (this.contar == true) {
             this.contador++;
-        } 
+        }
 
         this.contar = true;
 
@@ -329,49 +346,49 @@ class Logica {
 
             case 6:
                 this.contar = false;
-                this.app.image(this.instrucciones, 0, 0);
-                this.btnJugar.pintar();
+                this.app.image(this.instruccion1, 0, 0);
+                this.btnSiguiente.pintar();
                 break;
 
             case 7:
                 this.contar = false;
                 this.app.image(this.mes1, 0, 0);
-                this.precio = 2;
+                this.precio = 1;
                 break;
 
             case 8:
                 this.app.image(this.mes2, 0, 0);
-                this.precio = 3;
+                this.precio = 2;
                 break;
 
             case 9:
                 this.app.image(this.mes3, 0, 0);
-                this.precio = 4;
+                this.precio = 3;
                 break;
 
             case 10:
                 this.app.image(this.mes4, 0, 0);
-                this.precio = 5;
+                this.precio = 4;
                 break;
 
             case 11:
                 this.app.image(this.mes5, 0, 0);
-                this.precio = 6;
+                this.precio = 5;
                 break;
 
             case 12:
                 this.app.image(this.mes6, 0, 0);
-                this.precio = 7;
+                this.precio = 6;
                 break;
 
             case 13:
                 this.app.image(this.mes7, 0, 0);
-                this.precio = 8;
+                this.precio = 7;
                 break;
 
             case 14:
                 this.app.image(this.mes8, 0, 0);
-                this.precio = 9;
+                this.precio = 8;
                 break;
 
             case 15:
@@ -381,33 +398,30 @@ class Logica {
             case 16:
                 this.app.image(this.final, 0, 0);
                 this.app.textSize(40);
-                this.app.text(150000 + " " + "USD", 270, 570);
+                this.app.text("150.000" + " " + "USD", 270, 570);
                 if (this.dineroTotal < 150000) {
                     this.app.fill('rgb(164,2,0)');
                 } else if (this.dineroTotal > 150000) {
                     this.app.fill('rgb(0,152,6)');
                 }
-                this.app.text(this.dineroTotal.toFixed(0) + " " + "USD", 840, 570);
+                this.app.text(this.dineroTotalTxt + " " + "USD", 840, 570);
                 this.app.fill(0);
 
-                if(this.dineroTotal < 150000){
-                    this,this.puntaje = 0;
+                if (this.dineroTotal <= 150000) {
+                    this, this.puntaje = 0;
                 }
 
-                if(this.dineroTotal > 150000 && this.dineroTotal < 190000){
-                    this,this.puntaje = 5;
+                if (this.dineroTotal > 150000 && this.dineroTotal < 250000) {
+                    this, this.puntaje = ((((this.dineroTotal - 150000) * 100) / 100000) * 200) / 100;
                 }
 
-                if(this.dineroTotal > 190000 && this.dineroTotal < 220000){
-                    this,this.puntaje = 10;
+                if (this.dineroTotal >= 250000) {
+                    this, this.puntaje = 200;
                 }
-
-                if(this.dineroTotal > 22000 && this.dineroTotal < 250000){
-                    this,this.puntaje = 15;
-                }
-                if(this.dineroTotal > 250000){
-                    this,this.puntaje = 20;
-                }
+                break;
+            case 17:
+                this.app.image(this.instruccion2, 0, 0);
+                this.btnJugar.pintar();
                 break;
 
             default:
@@ -429,7 +443,7 @@ class Logica {
                 break;
 
             case 4:
-                this.porcentaje = +30;
+                this.porcentaje = 30;
                 break;
 
             case 5:
@@ -437,11 +451,11 @@ class Logica {
                 break;
 
             case 6:
-                this.porcentaje = +40;
+                this.porcentaje = 40;
                 break;
 
             case 7:
-                this.porcentaje = +22;
+                this.porcentaje = 22;
                 break;
 
             case 8:
@@ -485,13 +499,62 @@ class Logica {
         }
 
         if (this.pantalla == 7 || this.pantalla == 8 || this.pantalla == 9 || this.pantalla == 10 || this.pantalla == 11 || this.pantalla == 12 || this.pantalla == 13 || this.pantalla == 14 || this.pantalla == 15) {
-            this.dineroTotal = this.dinero + (this.cantidadBarriles * this.precioBarril.toFixed(0));
             this.app.image(this.meses, 0, 0);
-            this.app.text(": " + this.precioBarril.toFixed(0) + " " + "USD", 230, 55);
-            this.app.text(": x " + this.cantidadBarriles, 485, 55);
-            this.app.text(": " + this.dinero + " " + "USD", 775, 55);
-            this.app.text(": " + this.dineroTotal.toFixed(0) + " " + "USD", 1030, 55);
+            this.app.textFont(this.fuente);
+            this.app.textSize(18);
+            this.app.fill('rgb(36,36,36)');
+            switch (this.pantalla) {
+                case 7:
+                    this.app.fill('rgb(36,36,36)');
+                    this.app.text("Diciembre", 210, 93);
+                    break;
+                case 8:
+                    this.app.fill('rgb(0,152,6)');
+                    this.app.text("Enero", 210, 93);
+                    this.app.image(this.flechaVerde, 360, 37);
+                    break;
+                case 9:
+                    this.app.fill('rgb(36,36,36)');
+                    this.app.text("Febrero", 210, 93);
+                    break;
+                case 10:
+                    this.app.fill('rgb(164,2,0)');
+                    this.app.text("Marzo", 210, 93);
+                    this.app.image(this.flechaRoja, 360, 37);
+                    break;
+                case 11:
+                    this.app.fill('rgb(0,152,6)');
+                    this.app.text("Abril", 210, 93);
+                    this.app.image(this.flechaVerde, 360, 37);
+                    break;
+                case 12:
+                    this.app.fill('rgb(164,2,0)');
+                    this.app.text("Mayo", 210, 93);
+                    this.app.image(this.flechaRoja, 360, 37);
+                    break;
+                case 13:
+                    this.app.fill('rgb(0,152,6)');
+                    this.app.text("Junio", 210, 93);
+                    this.app.image(this.flechaVerde, 360, 37);
+                    break;
+                case 14:
+                    this.app.fill('rgb(0,152,6)');
+                    this.app.text("Julio", 210, 93);
+                    this.app.image(this.flechaVerde, 360, 37);
+                    break;
+                case 15:
+                    this.app.fill('rgb(36,36,36)');
+                    this.app.text("Agosto", 210, 93);
+                    break;
 
+                default:
+                    break;
+            }
+            this.app.fill('rgb(36,36,36)');
+            this.app.text(": " + this.precioBarril.toFixed(0) + " " + "USD por barril", 220, 55);
+            this.app.text(": x " + this.cantidadBarriles, 500, 55);
+            this.app.text(": " + this.dineroTxt + " " + "USD", 775, 55);
+            this.app.text(": " + this.dineroTotalTxt + " " + "USD", 1030, 55);
             if (this.compra || this.vende) {
 
                 //Ver que botones sirven para la compra
@@ -541,6 +604,27 @@ class Logica {
             }
         }
         //this.app.text("X:" + this.app.mouseX + " " + "Y:" + this.app.mouseY, this.app.mouseX, this.app.mouseY);
+    }
+
+    convertNumToString(num) {
+        this.text = num.toString();
+        this.largo = this.text.length;
+        if (this.largo > 3) {
+            this.numPunto = this.text.length - 3;
+            this.newText = "";
+            for (let i = 0; i < this.text.length; i++) {
+                if (i == 0) {
+                    this.newText = this.text.charAt(i);
+                }
+                if (this.numPunto == i) {
+                    this.newText = this.newText + ".";
+                }
+                if (i != 0) {
+                    this.newText = this.newText + this.text.charAt(i);
+                }
+            }
+        }
+        return this.newText;
     }
 }
 
